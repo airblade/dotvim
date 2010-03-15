@@ -1,0 +1,44 @@
+" When hitting <CR> in insert mode, this automatically inserts
+" '}' or 'end' as appropriate and leaves the cursor in the right
+" place.
+"
+" Based on 'Crazy Cool Vim Mapping for Ruby'
+" http://pmade.org/articles/2006/vim-mapping-for-ruby
+if !exists("*RubyEndToken")
+	function RubyEndToken ()
+		let current_line = getline( '.' )
+		let braces_at_end = '{\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
+		let stuff_without_do = '^\s*\(class\|if\|unless\|begin\|case\|for\|module\|while\|until\|def\)'
+		let with_do = 'do\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
+
+		if match(current_line, braces_at_end) >= 0
+			return "\<CR>}\<C-O>O" 
+		elseif match(current_line, stuff_without_do) >= 0
+			return "\<CR>end\<C-O>O" 
+		elseif match(current_line, with_do) >= 0
+			return "\<CR>end\<C-O>O" 
+		else
+			return "\<CR>" 
+		endif
+	endfunction
+endif
+imap <buffer> <CR> <C-R>=RubyEndToken()<CR>
+
+" A better (I think) function for completion.
+" http://osdir.com/ml/editors.vim.vim-ruby.devel/2005-10/msg00009.html
+" Hmm, this seems to prevent Vim from autocompleting.
+"function! s:CompleteStatement()
+	" TODO: we can check contents of ". register to make sure that they
+	" were inserted while typing here...
+	"if getline('.') =~ '^\s*\%(begin\|case\|class\|def\|for\|if\|module\|unless\|until\|while\)\>\|do\%(\s*|[^|]*|\s*\)\=$'
+		"let n = indent('.')
+		"let ind = ''
+		"let i = 0
+		"while i < n
+			"let ind .= ' '
+			"let i += 1
+		"endwhile
+		"call append(line('.'), ind . 'end')
+	"endif
+"endfunction
+"inoremap <buffer> <CR> <C-O>:call <SID>CompleteStatement()<CR><CR>

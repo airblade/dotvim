@@ -1,0 +1,68 @@
+*ack.txt*   Plugin that integrates ack with Vim
+
+==============================================================================
+License: Same terms as Vim itself (see |license|)                 *ack-author*
+Authors: 
+
+    All the blame for the current version should go 
+    to Vladimir Dobriakov (http://blog.geekQ.net).
+
+    All the praise for the original idea should go to 
+    Antoine Imbert and Miles Z. Sterrett.
+
+==============================================================================
+INTRODUCTION                                                             *ack*
+
+This plugin is a front for the Perl module App::Ack.  Ack can be used as a
+replacement for grep.  This plugin will allow you to run ack from vim, and
+shows the results in a split window.
+
+:Ack [options] {pattern} [{directory}]                                  *:Ack*
+
+    Search recursively in {directory} (which defaults to the current
+    directory) for the {pattern}.  Behaves just like the |:grep| command, but
+    will open the |Quickfix| window for you.
+
+:AckAdd [options] {pattern} [{directory}]                            *:AckAdd*
+
+    Just like |:Ack| + |:grepadd|.  Appends the |quickfix| with the results
+
+:LAck [options] {pattern} [{directory}]                                *:LAck*
+
+    Just like |:Ack| + |:lgrep|.  Searches, but opens in |location-list|
+
+:LAckAdd [options] {pattern} [{directory}]                          *:LAckAdd*
+
+    Just like |:Ack| + |:lgrepadd|.  Searches, but appends results to
+    |location-list|
+
+Files containing the search term will be listed in the split window, along
+with the line number of the occurrence, once for each occurrence.  <Enter> on
+a line in this window will open the file, and place the cursor on the matching
+line.
+
+See |quickfix| and |:cnext| for more information about efficient
+navigation in Quickfix window.
+
+:AckG [options] {file_pattern} [{directory}]                           *:AckG*
+
+    ack is also great for searching files by name, e.g. `ack -g user`
+    will find all files, which have /user/ in its name. So this plugin
+    can also act as an alternative to fuzzyfinder.vim
+    :AckG user
+    does the search and lists the files in the |Quickfix| window. Move
+    with 'j', 'k' and press <Enter> to open the file.
+    (Feature by Vladimir Dobriakov http://blog.geekq.net)
+
+You can also map the commands in your .vimrc with
+
+nmap <silent> <unique> <Leader>a :Ack
+nmap <silent> <unique> <Leader>g :AckG
+
+Then use `\g user` in |Normal-mode| to search for files, that contain
+`user` in its name or path or use `\a hello` to search for `hello` in
+file content.
+
+See http://search.cpan.org/~petdance/ack/ack and
+http://betterthangrep.com/ for more information.
+
