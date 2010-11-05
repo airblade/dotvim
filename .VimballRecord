@@ -1,2 +1,0 @@
-Align.vba: call delete('/Users/andy/.vim/plugin/AlignPlugin.vim')|call delete('/Users/andy/.vim/plugin/AlignMaps.vim')|call delete('/Users/andy/.vim/plugin/cecutil.vim')|call delete('/Users/andy/.vim/doc/Align.txt')|call delete('/Users/andy/.vim/autoload/Align.vim')
-camelcasemotion.vba: call delete('/Users/andy/.vim/autoload/camelcasemotion.vim')|call delete('/Users/andy/.vim/plugin/camelcasemotion.vim')|call delete('/Users/andy/.vim/doc/camelcasemotion.txt')
