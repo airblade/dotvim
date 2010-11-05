@@ -17,3 +17,14 @@ add `tags` to `bundle/REPO/.git/info/exclude`, where `REPO` is the repository
 giving the warning.
 
 Thanks to [John MacFarlane](https://github.com/jgm/dotvim/blob/master/README) for this tip.
+
+## Learn more with PeepCode
+
+If you want to learn more about Vim, I heartily recommend these PeepCode screecasts:
+
+* [Smash Into Vim](http://peepcode.com/products/smash-into-vim-i)
+* [Smash Into Vim II](http://peepcode.com/products/smash-into-vim-ii)
+
+But don't take my word for it.  Look at [these Tweets](http://airbladesoftware.com/portfolio) instead.
+
+;)
