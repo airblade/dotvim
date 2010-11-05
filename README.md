@@ -1,4 +1,6 @@
-This is the contents of my .vim directory.
+# .vim
+
+I symlink my `~/.vim` directory to this repo.  Similarly for `~/.vimrc` and `~/.gvimrc`.
 
 All addons go in the `bundle` directory and are managed by Pathogen.
 Where possible they are installed as git submodules.  For example:
