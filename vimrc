@@ -63,6 +63,16 @@ nnoremap <Leader>u :s/\<./\u&/g<CR>
 " <Leader><space> turns off search highlighting.
 nnoremap <Leader><space> :noh<CR>
 
+" <Leader>s shrinks current window to fit size of buffer.
+nnoremap <silent> <Leader>s :call ShrinkWindow()<CR>
+function! ShrinkWindow()
+  let line_count = line('$')
+  let window_height = winheight(0)
+  if window_height > line_count
+    execute "resize" line_count
+  endif
+endfunction
+
 " Open directory of current file.
 cnoremap ecd edit <c-r>=expand("%:h")<CR><CR>
 " Change directory to current file's.
