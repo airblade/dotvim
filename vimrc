@@ -24,6 +24,7 @@ set smartcase                     " But case-sensitive if expression contains a 
 
 set number                        " Show absolute line numbers (cf. relativenumber).
 set ruler                         " Show cursor position.
+set laststatus=2                  " Always show a status line.
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
