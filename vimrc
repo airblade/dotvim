@@ -57,6 +57,9 @@ let g:sql_type_default = "mysql"
 nnoremap / /\v
 vnoremap / /\v
 
+" OS X-like space bar to scroll.
+nnoremap <Space> <C-F>
+
 " Capitalise the first letter of every word on a line.
 nnoremap <Leader>u :s/\<./\u&/g<CR>
 
