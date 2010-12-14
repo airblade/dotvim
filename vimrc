@@ -183,3 +183,7 @@ autocmd User Rails silent! Rnavcommand ncss app/views/stylesheets -glob=* -suffi
 nmap <silent> <unique> <Leader>a :Ack
 nmap <silent> <unique> <Leader>as :AckFromSearch
 nmap <silent> <unique> <Leader>af :AckFile
+
+" Syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
