@@ -187,3 +187,30 @@ nmap <silent> <unique> <Leader>af :AckFile
 " Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+
+" Tabularize
+"if exists(':Tabularize')
+"           ^^^^^^^^^^^^ for some reason Tabularize hasn't loaded when Vim gets here
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t> :Tabularize /=><CR>
+vmap <Leader>t> :Tabularize /=><CR>
+nmap <Leader>t: :Tabularize /:\zs<CR>
+vmap <Leader>t: :Tabularize /:\zs<CR>
+
+" Auto-align Cucumber tables as you type.
+" N.B. either the line above or the line below must already be formatted with
+" spaces around the pipes.
+" https://gist.github.com/287147
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+"endif
