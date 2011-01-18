@@ -193,10 +193,15 @@ let g:syntastic_auto_loc_list=1
 "           ^^^^^^^^^^^^ for some reason Tabularize hasn't loaded when Vim gets here
 nmap <Leader>t= :Tabularize /=<CR>
 vmap <Leader>t= :Tabularize /=<CR>
+" key => value
 nmap <Leader>t> :Tabularize /=><CR>
 vmap <Leader>t> :Tabularize /=><CR>
+" key: value
 nmap <Leader>t: :Tabularize /:\zs<CR>
 vmap <Leader>t: :Tabularize /:\zs<CR>
+" Ruby symbols
+nmap <Leader>ts :Tabularize /:/l1c0l0<CR>
+vmap <Leader>ts :Tabularize /:/l1c0l0<CR>
 
 " Auto-align Cucumber tables as you type.
 " N.B. either the line above or the line below must already be formatted with
