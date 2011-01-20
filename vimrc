@@ -211,10 +211,21 @@ inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    " Calculate column cursor is in, and offset within that column,
+    " so we can place the cursor in the right place after Tabularize
+    " has done its thing.
+    "
+    " The 1-based index of the column the cursor's in.
+    " getline('.')[0:col('.')] returns current line from 0 to one character
+    " to right of cursor inclusive...remember all this is called when you
+    " type a |
     let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    " Offset within the column.  Equals 1 when you type |
     let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
     Tabularize/|/l1
+    " Go to start of current line.
     normal! 0
+    " Return cursor to starting offset within starting column.
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
