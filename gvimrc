@@ -10,8 +10,8 @@ colorscheme grb3                  " Gary Bernhardt: http://bitbucket.org/garyber
 set guifont=Inconsolata:h11       " Decent font.
 
 " external screen
-set lines=103 columns=120         " Big window.
-winpos 720 44                     " Centre of screen.
+set lines=126 columns=124         " Big window.
+winpos 1075 1570                  " Centre of screen.
 " laptop screen
 "set lines=71 columns=120         " Big window.
 "winpos 365 878                     " Centre of screen.
