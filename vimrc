@@ -179,6 +179,7 @@ map <Leader>f <Plug>PeepOpen
 "let g:fuzzy_matching_limit = 30
 
 " BufExplorer configuration
+nmap <script> <silent> <unique> <Leader><Leader> :BufExplorer<CR>
 let g:bufExplorerShowRelativePath=1
 "let g:bufExplorerShowUnlisted=1
 
