@@ -10,12 +10,19 @@ set background=dark               " Dark background.
 colorscheme grb3                  " Gary Bernhardt: http://bitbucket.org/garybernhardt/dotfiles/src/tip/.vimrc
 set guifont=Inconsolata:h11       " Decent font.
 
-" external screen
-set lines=126 columns=124         " Big window.
-winpos 1075 1570                  " Centre of screen.
-" laptop screen
-"set lines=71 columns=120         " Big window.
-"winpos 365 878                     " Centre of screen.
-
 highlight SPELLING guibg=blue     " Highlight likely typos.
 match SPELLING /toin/
+
+" Size and position window for different displays.
+
+nnoremap <silent> <Leader>dc :call Cinema()<CR>
+function! Cinema()
+  set lines=126 columns=124
+  winpos 1075 1570
+endfunction
+
+nnoremap <silent> <Leader>dl :call Laptop()<CR>
+function! Laptop()
+  set lines=71 columns=120
+  winpos 365 878
+endfunction
