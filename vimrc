@@ -42,7 +42,8 @@ set visualbell                    " No beeping.
 
 set nobackup                      " No backups.
 set nowritebackup                 " No backups.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location to simplify crash recovery.
+set updatecount=0
+set directory=                    " No swap files...unix never crashes...well, hardly ever.
 
 set tildeop                       " Make tilde command behave like an operator.
 set shortmess=atI                 " Avoid unnecessary hit-enter prompts.
