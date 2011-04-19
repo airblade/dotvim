@@ -3,6 +3,7 @@ if has("gui_macvim")
   set encoding=utf-8              " MacVim: use UTF-8 everywhere.
   set guioptions-=T               " MacVim: hide toolbar.
   set guioptions-=r               " MacVim: hide right scrollbar.
+  set guioptions-=L               " MacVim: hide left scrollbar.
 endif
 
 set background=dark               " Dark background.
