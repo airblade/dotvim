@@ -67,6 +67,9 @@ nnoremap <Leader>u :s/\<./\u&/g<CR>
 " <Leader><space> turns off search highlighting.
 nnoremap <Leader><space> :noh<CR>
 
+" Kill trailing White Space
+nnoremap <Leader>kws :%s/\s\+$//<CR>
+
 " <Leader>s shrinks current window to fit size of buffer.
 nnoremap <silent> <Leader>s :call ShrinkWindow()<CR>
 function! ShrinkWindow()
