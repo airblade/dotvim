@@ -141,6 +141,9 @@ map  <Del>   :bd<CR>
 
 " Show tabs and trailing whitespace visually
 " http://github.com/ciaranm/dotfiles-ciaranm/blob/master/vimrc
+"
+" See also here for a different solution:
+" http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
 if (&termencoding == "utf-8") || has("gui_running")
   if v:version >= 700
     if has("gui_running")
