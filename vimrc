@@ -42,8 +42,7 @@ set visualbell                    " No beeping.
 
 set nobackup                      " No backups.
 set nowritebackup                 " No backups.
-set updatecount=0
-set directory=                    " No swap files...unix never crashes...well, hardly ever.
+set noswapfile                    " No swap files; more hassle than they're worth.
 
 set tildeop                       " Make tilde command behave like an operator.
 set shortmess=atI                 " Avoid unnecessary hit-enter prompts.
