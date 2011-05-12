@@ -60,9 +60,6 @@ vnoremap / /\v
 " OS X-like space bar to scroll.
 nnoremap <Space> <C-F>
 
-" Capitalise the first letter of every word on a line.
-nnoremap <Leader>u :s/\<./\u&/g<CR>
-
 " <Leader><space> turns off search highlighting.
 nnoremap <Leader><space> :noh<CR>
 
@@ -100,9 +97,6 @@ nmap gV `[v`]
 " Make * and # work with visual selection.
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
-
-" Save on losing focus
-"au FocusLost * :wa
 
 
 " TODO:
