@@ -76,10 +76,8 @@ function! ShrinkWindow()
   endif
 endfunction
 
-" Open directory of current file.
-cnoremap ecd edit <c-r>=expand("%:h")<CR><CR>
-" Change directory to current file's.
-cnoremap cdc cd <c-r>=expand("%:h")<CR><CR>
+" Directory of current file.
+cnoremap %% <C-R>=expand("%:h")."/"<CR>
 
 " Map § to # for typing convenience
 set iminsert=1
