@@ -12,6 +12,8 @@ After a fresh clone of this repository, get the submodules with:
     git submodule init
     git submodule update
 
+(See [Git Submodules: Adding, Using, Removing, Updating](http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/) for more information.)
+
 If after `call pathogen#helptags()` you get a warning about a dirty submodule,
 add `tags` to `bundle/REPO/.git/info/exclude`, where `REPO` is the repository
 giving the warning.
