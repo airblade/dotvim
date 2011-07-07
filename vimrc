@@ -183,12 +183,6 @@ nmap <silent> <unique> <Leader>a :Ack
 nmap <silent> <unique> <Leader>as :AckFromSearch
 nmap <silent> <unique> <Leader>af :AckFile
 
-" Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-" Rails 3's erb format is not valid ERB.
-let g:syntastic_disabled_filetypes = ['eruby', 'javascript']
-
 " Tabularize
 "if exists(':Tabularize')
 "           ^^^^^^^^^^^^ for some reason Tabularize hasn't loaded when Vim gets here
