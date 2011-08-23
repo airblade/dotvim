@@ -49,3 +49,6 @@
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
+[submodule "bundle/vim-bundler"]
+	path = bundle/vim-bundler
+	url = https://github.com/tpope/vim-bundler.git
