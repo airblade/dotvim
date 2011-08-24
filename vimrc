@@ -96,30 +96,6 @@ nmap gV `[v`]
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
 
-
-" TODO:
-" - move this Ruby commenting into a filetype plugin.
-" - use `comments` option.
-
-" Enclose visual selection with =begin and =end.
-vmap <Leader>c <Esc>'<O=begin<Esc>'>o=end<Esc>
-
-" Remove enclosing =begin and =end.
-nmap <silent> <Leader>z :call ZapComment()<CR>
-function! ZapComment()
-  let pos = getpos(".")
-  let line_number = search("=begin", "bc")
-  if line_number > 0
-    exe line_number . "d _"
-  endif
-  let line_number = search("=end", "c")
-  if line_number > 0
-    exe line_number . "d _"
-  endif
-  let pos[1] = pos[1] - 1
-  call setpos('.', pos)
-endfunction
-
 " Markdown preview.  http://rtomayko.github.com/bcat/
 map <Leader>pm :!markdown % <Bar>bcat<CR>
 
