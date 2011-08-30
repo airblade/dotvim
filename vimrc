@@ -136,6 +136,11 @@ endif
 "
 
 
+" vim-commentary
+xmap <Leader>c  <Plug>Commentary
+nmap <Leader>c  <Plug>Commentary
+nmap <Leader>cc <Plug>CommentaryLine
+
 " PeepOpen
 map <Leader>f <Plug>PeepOpen
 
