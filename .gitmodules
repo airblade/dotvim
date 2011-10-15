@@ -58,3 +58,6 @@
 [submodule "bundle/vim-blockle"]
 	path = bundle/vim-blockle
 	url = https://github.com/jgdavey/vim-blockle.git
+[submodule "bundle/vim-statline"]
+	path = bundle/vim-statline
+	url = https://github.com/millermedeiros/vim-statline.git
