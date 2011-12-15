@@ -130,6 +130,28 @@ else
   endif
 endif
 
+" Save all buffers when focus lost, ignoring warnings,
+" and return to normal mode.
+"
+" Ideally we'd have:
+"
+"   autocmd FocusLost * silent! wa stopinsert
+"
+" but stopinsert doesn't seem to work inside a FocusLost autocommand.
+" So we use a long-winded approach instead.
+"
+" http://tech.groups.yahoo.com/group/vim/message/94986
+autocmd FocusLost * silent! wa
+autocmd FocusLost * if mode()[0] =~ 'i\|R' | call feedkeys("\<Esc>") | endif
+
+
+"
+" Filetypes
+"
+
+au Filetype css setlocal iskeyword+=-
+au Filetype ruby setlocal iskeyword+=_
+
 
 "
 " Plugins
