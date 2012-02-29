@@ -6,4 +6,5 @@ endif
 
 augroup filetypedetect
   au! BufRead,BufNewFile *.ncss setfiletype css
+  au! BufRead,BufNewFile */nginx/*.conf set ft=nginx
 augroup END
