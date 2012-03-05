@@ -51,6 +51,9 @@ set noequalalways                 " Resize windows as little as possible.
 
 set autoread                      " Automatically re-read files changed outside Vim.
 
+set notimeout                     " Don't time out partially entered mapped key sequences.
+set ttimeout                      " But do time out key codes.
+
 let g:sql_type_default = "mysql"
 
 " Very magic regexes.
