@@ -59,6 +59,8 @@ let g:sql_type_default = "mysql"
 " Very magic regexes.
 nnoremap / /\v
 vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
 
 " OS X-like space bar to scroll.
 nnoremap <Space> <C-F>
