@@ -102,7 +102,7 @@ vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
 
 " Markdown preview.  http://rtomayko.github.com/bcat/
-map <Leader>pm :!markdown % <Bar>bcat<CR>
+map <Leader>m :!markdown % <Bar>bcat<CR>
 
 " Use cursor keys to navigate buffers.
 map  <Right> :bnext<CR>
