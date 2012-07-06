@@ -103,6 +103,7 @@ noremap <Leader>P :set paste<CR>"*P:set nopaste<CR>
 noremap Y y$
 
 " Visually select the text that was most recently edited/pasted.
+" Note: gv selects previously selected area.
 nmap gV `[v`]
 
 " Duplicate visual selection.
