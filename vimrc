@@ -105,6 +105,9 @@ noremap Y y$
 " Visually select the text that was most recently edited/pasted.
 nmap gV `[v`]
 
+" Duplicate visual selection.
+vmap D yP'<
+
 " Make * and # work with visual selection.
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
