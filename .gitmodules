@@ -61,3 +61,6 @@
 [submodule "bundle/vim-statline"]
 	path = bundle/vim-statline
 	url = https://github.com/millermedeiros/vim-statline.git
+[submodule "bundle/file-line"]
+	path = bundle/file-line
+	url = https://github.com/bogado/file-line.git
