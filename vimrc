@@ -54,6 +54,8 @@ set autoread                      " Automatically re-read files changed outside 
 set notimeout                     " Don't time out partially entered mapped key sequences.
 set ttimeout                      " But do time out key codes.
 
+set gdefault                      " Make `substitute` replace all occurrences on a line by default.
+
 set tags=.git/tags,tags           " Look for tags in .git/
 
 let g:sql_type_default = "mysql"
