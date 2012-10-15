@@ -60,6 +60,10 @@ set tags=.git/tags,tags           " Look for tags in .git/
 
 let g:sql_type_default = "mysql"
 
+" Make + and - increase/decrease the window size.
+nnoremap + <C-W>+
+nnoremap - <C-W>-
+
 " Very magic regexes.
 nnoremap / /\v
 vnoremap / /\v
