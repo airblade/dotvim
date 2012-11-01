@@ -262,4 +262,4 @@ let g:statline_trailing_space = 0
 
 " vim-rooter
 map <Leader>r <Plug>RooterChangeToRootDirectory<CR>
-let g:rooter_patterns = ['Rakefile', '.git/']
+let g:rooter_patterns = ['Rakefile', '.git/', 'CHANGELOG']
