@@ -116,8 +116,9 @@ nmap gV `[v`]
 vmap D yP'<
 
 " Make * and # work with visual selection.
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
+" For anything more sophisticated, try https://github.com/thinca/vim-visualstar
+vnoremap <silent> * yq/p<CR>
+vnoremap <silent> # yq?p<CR>
 
 " Markdown preview.  http://rtomayko.github.com/bcat/
 map <Leader>m :!markdown % <Bar>bcat<CR>
