@@ -193,12 +193,6 @@ nmap <Leader>cc <Plug>CommentaryLine
 " PeepOpen
 map <Leader>f <Plug>PeepOpen
 
-" FuzzyFinder TextMate
-"map <Leader>t :FuzzyFinderTextMate<CR>
-"map <Leader>r :FuzzyFinderTextMateRefreshFiles<CR>
-"let g:fuzzy_ignore = "*.log,db/sphinx/**"
-"let g:fuzzy_matching_limit = 30
-
 " BufExplorer configuration
 nmap <script> <silent> <unique> <Leader><Leader> :BufExplorer<CR>
 let g:bufExplorerShowRelativePath=1
@@ -206,7 +200,6 @@ let g:bufExplorerShowRelativePath=1
 
 " rails.vim configuration
 autocmd User Rails silent! Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
-autocmd User Rails silent! Rnavcommand ncss app/views/stylesheets -glob=* -suffix=.css.ncss -default=application
 
 " ack.vim
 nmap <silent> <unique> <Leader>a :Ack
