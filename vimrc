@@ -123,12 +123,8 @@ vnoremap <silent> # yq?p<CR>
 " Markdown preview.  http://rtomayko.github.com/bcat/
 map <Leader>m :!markdown % <Bar>bcat<CR>
 
-" Use cursor keys to navigate buffers.
-map  <Right> :bnext<CR>
-map  <Left>  :bprev<CR>
-imap <Right> <ESC>:bnext<CR>
-imap <Left>  <ESC>:bprev<CR>
-map  <Del>   :bd<CR>
+" Backspace closes buffer.
+nnoremap <BS> :bd<CR>
 
 " Prevent Vim from scrolling original window when splitting horizontally.
 " See example 'Restoring the View' in Vim manual chapter 41.10.
