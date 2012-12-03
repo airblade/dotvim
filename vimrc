@@ -131,7 +131,8 @@ imap <Left>  <ESC>:bprev<CR>
 map  <Del>   :bd<CR>
 
 " Prevent Vim from scrolling original window when splitting horizontally.
-nnoremap <C-W>s Hmx`` \|:split<CR>`xzt``
+" See example 'Restoring the View' in Vim manual chapter 41.10.
+nnoremap <C-W>s Hmx``:split<CR>`xzt``
 
 " Show tabs and trailing whitespace visually
 " http://github.com/ciaranm/dotfiles-ciaranm/blob/master/vimrc
