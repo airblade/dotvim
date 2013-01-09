@@ -130,6 +130,9 @@ nnoremap <BS> :bd<CR>
 " See example 'Restoring the View' in Vim manual chapter 41.10.
 nnoremap <C-W>s Hmx``:split<CR>`xzt``
 
+" Ruby: convert 1.8 hash syntax to 1.9, e.g `:foo => bar` to `foo: bar`.
+map <Leader>h :s/\v:(\w+)\s*\=\>\s*(\S)/\1: \2/<CR>:noh<CR>
+
 " Show tabs and trailing whitespace visually
 " http://github.com/ciaranm/dotfiles-ciaranm/blob/master/vimrc
 "
