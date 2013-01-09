@@ -31,6 +31,7 @@ set hlsearch                      " Highlight matches.
 
 set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
+set display+=lastline             " Display as much as possibe of a window's last line.
 
 set shiftwidth=2                  " 
 set tabstop=2                     " Tabs and spaces.
@@ -57,6 +58,17 @@ set ttimeout                      " But do time out key codes.
 set gdefault                      " Make `substitute` replace all occurrences on a line by default.
 
 set tags=.git/tags,tags           " Look for tags in .git/
+
+set clipboard=unnamed             " Use OS clipboard by default.
+
+" Show tabs and trailing whitespace visually.
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
+    let &fillchars = "vert:\u259a,fold:\u00b7"
+  endif
+endif
 
 let g:sql_type_default = "mysql"
 
@@ -132,30 +144,6 @@ nnoremap <C-W>s Hmx``:split<CR>`xzt``
 
 " Ruby: convert 1.8 hash syntax to 1.9, e.g `:foo => bar` to `foo: bar`.
 map <Leader>h :s/\v:(\w+)\s*\=\>\s*(\S)/\1: \2/<CR>:noh<CR>
-
-" Show tabs and trailing whitespace visually
-" http://github.com/ciaranm/dotfiles-ciaranm/blob/master/vimrc
-"
-" See also here for a different solution:
-" http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
-if (&termencoding == "utf-8") || has("gui_running")
-  if v:version >= 700
-    if has("gui_running")
-      set list listchars=tab:»·,trail:·,extends:…,nbsp:‗
-    else
-      " xterm + terminus hates these
-      set list listchars=tab:»·,trail:·,extends:>,nbsp:_
-    endif
-  else
-    set list listchars=tab:»·,trail:·,extends:…
-  endif
-else
-  if v:version >= 700
-    set list listchars=tab:>-,trail:.,extends:>,nbsp:_
-  else
-    set list listchars=tab:>-,trail:.,extends:>
-  endif
-endif
 
 " Save all buffers when focus lost, ignoring warnings,
 " and return to normal mode.
