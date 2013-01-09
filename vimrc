@@ -251,8 +251,10 @@ endfunction
 
 " vim-statline
 let g:statline_syntastic = 0
+let g:statline_show_n_buffers = 0
+let g:statline_filename_relative = 1
 let g:statline_mixed_indent = 0
-let g:statline_trailing_space = 0
+"let g:statline_trailing_space = 0
 
 " vim-rooter
 map <Leader>r <Plug>RooterChangeToRootDirectory<CR>
