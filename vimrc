@@ -37,7 +37,6 @@ set display+=lastline             " Display as much as possibe of a window's las
 set shiftwidth=2                  " 
 set tabstop=2                     " Tabs and spaces.
 set expandtab                     " 
-set shiftround                    "
 
 set title                         " Set the terminal's title
 
