@@ -3,10 +3,6 @@ runtime colors/ir_black.vim
 
 let g:colors_name = "grb"
 
-hi pythonSpaceError ctermbg=red guibg=red
-
-" hi Comment ctermfg=darkyellow
-
 hi Normal guibg=#101010
 hi NonText guibg=#101010
 hi LineNr guibg=#101010
