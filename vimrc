@@ -60,6 +60,8 @@ set tags=.git/tags,tags           " Look for tags in .git/
 
 set clipboard=unnamed             " Use OS clipboard by default.
 
+set cpo+=J                        " Two spaces delimit my sentences.
+
 " Show tabs and trailing whitespace visually.
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
