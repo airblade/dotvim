@@ -183,6 +183,7 @@ map <Leader>f <Plug>PeepOpen
 
 " BufExplorer configuration
 nmap <script> <silent> <unique> <Leader><Leader> :BufExplorer<CR>
+nmap <script> <silent> <unique> <CR> :BufExplorer<CR>
 let g:bufExplorerShowRelativePath=1
 "let g:bufExplorerShowUnlisted=1
 
