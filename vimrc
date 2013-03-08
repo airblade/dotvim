@@ -72,9 +72,13 @@ endif
 
 let g:sql_type_default = "mysql"
 
-" Make + and - increase/decrease the window size.
+" Windowing.
 nnoremap + <C-W>+
 nnoremap - <C-W>-
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " Very magic regexes.
 nnoremap / /\v
