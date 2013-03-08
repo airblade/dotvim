@@ -160,7 +160,7 @@ map <Leader>h :s/\v:(\w+)\s*\=\>\s*(\S)/\1: \2/<CR>:noh<CR>
 " So we use a long-winded approach instead.
 "
 " http://tech.groups.yahoo.com/group/vim/message/94986
-autocmd FocusLost * silent! wa
+autocmd FocusLost * nested silent! wa
 autocmd FocusLost * if mode()[0] =~ 'i\|R' | call feedkeys("\<Esc>") | endif
 
 
