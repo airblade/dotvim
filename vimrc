@@ -276,7 +276,7 @@ let g:statline_mixed_indent = 0
 
 " vim-rooter
 map <Leader>r <Plug>RooterChangeToRootDirectory<CR>
-let g:rooter_patterns = ['Rakefile', '.git/', 'CHANGELOG']
+let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
 
 " vim-gitgutter
 highlight clear SignColumn  " override default colorscheme
