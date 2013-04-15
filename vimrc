@@ -172,6 +172,27 @@ map <Leader>h :s/\v:(\w+)\s*\=\>\s*(\S)/\1: \2/<CR>:noh<CR>
 autocmd FocusLost * nested silent! wa
 autocmd FocusLost * if mode()[0] =~ 'i\|R' | call feedkeys("\<Esc>") | endif
 
+" Wipe all buffers which aren't visible ('active').
+" https://github.com/nelstrom/dotfiles/blob/8e8accf783aaf13e5407311f0d3079022152acf1/vimrc#L166-L189
+command Only call CloseHiddenBuffers()
+function! CloseHiddenBuffers()
+  " Get list of visible buffers
+  let visible = {}
+  for t in range(1, tabpagenr('$'))
+    for b in tabpagebuflist(t)
+      let visible[b] = 1
+    endfor
+  endfor
+  " Close other buffers
+  for b in range(1, bufnr('$'))
+    if bufloaded(b) && !has_key(visible, b)
+      execute 'bw ' . b
+    endif
+  endfor
+endfunction
+
+
+
 
 "
 " Filetypes
