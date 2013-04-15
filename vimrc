@@ -34,9 +34,9 @@ set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 set display+=lastline             " Display as much as possibe of a window's last line.
 
-set shiftwidth=2                  " 
+set shiftwidth=2                  "
 set tabstop=2                     " Tabs and spaces.
-set expandtab                     " 
+set expandtab                     "
 
 set title                         " Set the terminal's title
 
