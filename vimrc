@@ -78,6 +78,7 @@ let g:sql_type_default = "mysql"
 " Windowing.
 nnoremap + <C-W>+
 nnoremap - <C-W>-
+nnoremap <C-s> <C-W>s
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
