@@ -89,6 +89,7 @@ nnoremap / /\v
 vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
+cnoremap s/ s/\v
 
 " OS X-like space bar to scroll.
 nnoremap <Space> <C-F>
