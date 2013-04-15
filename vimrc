@@ -280,5 +280,6 @@ let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
 
 " vim-gitgutter
 highlight clear SignColumn  " override default colorscheme
-nmap ]h :GitGutterNextHunk<CR>
-nmap [h :GitGutterPrevHunk<CR>
+nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
+nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
+let g:gitgutter_sign_column_always = 1
