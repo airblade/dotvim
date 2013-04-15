@@ -61,6 +61,9 @@ set tags=.git/tags,tags           " Look for tags in .git/
 set clipboard=unnamed             " Use OS clipboard by default.
 
 set cpo+=J                        " Two spaces delimit my sentences.
+if v:version >= 703 && has("patch541")
+  set formatoptions+=j              " Remove comment leaders when joining lines.
+endif
 
 " Show tabs and trailing whitespace visually.
 if &listchars ==# 'eol:$'
