@@ -206,12 +206,6 @@ au Filetype ruby setlocal iskeyword+=_
 " Plugins
 "
 
-
-" vim-commentary
-xmap <Leader>c  <Plug>Commentary
-nmap <Leader>c  <Plug>Commentary
-nmap <Leader>cc <Plug>CommentaryLine
-
 " PeepOpen
 map <Leader>f <Plug>PeepOpen
 
