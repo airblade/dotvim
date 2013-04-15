@@ -136,7 +136,9 @@ nmap gV `[v`]
 vmap D yP'<
 
 " Make * and # work with visual selection.
-" For anything more sophisticated, try https://github.com/thinca/vim-visualstar
+" For anything more sophisticated, try:
+" - https://github.com/nelstrom/vim-visual-star-search
+" - https://github.com/thinca/vim-visualstar
 vnoremap <silent> * yq/p<CR>
 vnoremap <silent> # yq?p<CR>
 
