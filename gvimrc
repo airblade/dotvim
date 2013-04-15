@@ -18,13 +18,11 @@ match SPELLING /toin/
 
 " Size and position window for different displays.
 
-nnoremap <silent> <Leader>dc :call Cinema()<CR>
 function! Cinema()
   set lines=126 columns=124
   winpos 1075 1570
 endfunction
 
-nnoremap <silent> <Leader>dl :call Laptop()<CR>
 function! Laptop()
   set lines=71 columns=120
   winpos 365 878
