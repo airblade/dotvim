@@ -230,13 +230,8 @@ nmap <silent> <unique> <Leader>as :AckFromSearch
 nmap <silent> <unique> <Leader>af :AckFile
 
 " Tabularize
-"if exists(':Tabularize')
-"           ^^^^^^^^^^^^ for some reason Tabularize hasn't loaded when Vim gets here
 nmap <Leader>t= :Tabularize /=<CR>
 vmap <Leader>t= :Tabularize /=<CR>
-" key => value
-nmap <Leader>t> :Tabularize /=><CR>
-vmap <Leader>t> :Tabularize /=><CR>
 " key: value
 nmap <Leader>t: :Tabularize /:\zs<CR>
 vmap <Leader>t: :Tabularize /:\zs<CR>
