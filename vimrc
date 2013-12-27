@@ -88,11 +88,14 @@ nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 
 " Very magic regexes.
-nnoremap / /\v
-vnoremap / /\v
-nnoremap ? ?\v
-vnoremap ? ?\v
-cnoremap s/ s/\v
+cnoremap s/ <C-\>eVeryMagic('s/')<CR>
+cnoremap g/ <C-\>eVeryMagic('g/')<CR>
+cnoremap v/ <C-\>eVeryMagic('v/')<CR>
+function! VeryMagic(text)
+  let cmd = getcmdline()
+  return cmd . a:text . (cmd !~ '/' ? '\v' : '')
+endfunction
+
 
 " OS X-like space bar to scroll.
 nnoremap <Space> <C-F>
