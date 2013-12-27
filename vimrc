@@ -52,6 +52,7 @@ set shortmess=atI                 " Avoid unnecessary hit-enter prompts.
 set noequalalways                 " Resize windows as little as possible.
 
 set autoread                      " Automatically re-read files changed outside Vim.
+set updatetime=750                " Do things when I stop typing for three-quarters of a second.
 
 set notimeout                     " Don't time out partially entered mapped key sequences.
 set ttimeout                      " But do time out key codes.
