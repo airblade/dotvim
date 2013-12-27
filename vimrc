@@ -84,6 +84,8 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
+nnoremap <Tab> <C-W>w
+nnoremap <S-Tab> <C-W>W
 
 " Very magic regexes.
 nnoremap / /\v
