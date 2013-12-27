@@ -217,8 +217,9 @@ au BufEnter *.js syn match ErrorMsg /console.log/
 map <Leader>f <Plug>PeepOpen
 
 " BufExplorer configuration
-" nmap <script> <silent> <unique> <Leader><Leader> :BufExplorer<CR>
-nmap <script> <silent> <unique> <CR> :BufExplorer<CR>
+"nmap <script> <silent> <unique> <CR> :BufExplorer<CR>
+nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
+let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
 
 " rails.vim configuration
