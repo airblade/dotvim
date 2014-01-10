@@ -230,6 +230,7 @@ autocmd User Rails silent! Rnavcommand config config -glob=*.* -suffix= -default
 nmap <silent> <unique> <Leader>a :Ack
 nmap <silent> <unique> <Leader>as :AckFromSearch
 nmap <silent> <unique> <Leader>af :AckFile
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Tabularize
 nmap <Leader>t= :Tabularize /=<CR>
