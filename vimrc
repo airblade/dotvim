@@ -213,6 +213,10 @@ au BufEnter *.js syn match ErrorMsg /console.log/
 " PeepOpen
 map <Leader>f <Plug>PeepOpen
 
+" vim-commentary
+" disable obsolete mapping
+nmap \\ <space>
+
 " BufExplorer configuration
 "nmap <script> <silent> <unique> <CR> :BufExplorer<CR>
 nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
