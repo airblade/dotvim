@@ -226,6 +226,8 @@ nmap \\ <space>
 nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
+let g:bufExplorerShowDirectories = 0
+
 
 " rails.vim configuration
 autocmd User Rails silent! Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
