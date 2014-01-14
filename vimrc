@@ -228,7 +228,6 @@ let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerShowDirectories = 0
 
-
 " rails.vim configuration
 autocmd User Rails silent! Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
 
@@ -237,16 +236,6 @@ nmap <silent> <unique> <Leader>a :Ack
 nmap <silent> <unique> <Leader>as :AckFromSearch
 nmap <silent> <unique> <Leader>af :AckFile
 let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" Tabularize
-nmap <Leader>t= :Tabularize /=<CR>
-vmap <Leader>t= :Tabularize /=<CR>
-" key: value
-nmap <Leader>t: :Tabularize /:\zs<CR>
-vmap <Leader>t: :Tabularize /:\zs<CR>
-" Ruby symbols
-nmap <Leader>ts :Tabularize /:/l1c0l0<CR>
-vmap <Leader>ts :Tabularize /:/l1c0l0<CR>
 
 " Auto-align Cucumber tables as you type.
 " N.B. either the line above or the line below must already be formatted with
