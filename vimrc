@@ -9,6 +9,10 @@ filetype plugin indent on         " Turn on file type detection.
 
 runtime macros/matchit.vim        " Load matchit.vim plugin.
 
+set background=dark
+colorscheme solarized
+hi LineNr guibg=NONE
+
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 

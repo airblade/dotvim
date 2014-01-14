@@ -55,3 +55,6 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "bundle/vim-color-solarized"]
+	path = bundle/vim-color-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git

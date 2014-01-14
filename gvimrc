@@ -1,4 +1,3 @@
-
 if has("gui_macvim")
   set antialias                   " MacVim: smooth fonts.
   set encoding=utf-8              " MacVim: use UTF-8 everywhere.
@@ -9,8 +8,6 @@ if has("gui_macvim")
   set guioptions-=L               " MacVim: hide left scrollbar.
 endif
 
-set background=dark               " Dark background.
-colorscheme grb3                  " Gary Bernhardt: http://bitbucket.org/garybernhardt/dotfiles/src/tip/.vimrc
 set guifont=Inconsolata:h11       " Decent font.
 
 highlight SPELLING guibg=blue     " Highlight likely typos.
