@@ -1,7 +1,7 @@
 " Based on
 runtime colors/ir_black.vim
 
-let g:colors_name = "grb"
+let g:colors_name = "grb3"
 
 hi Normal guibg=#101010
 hi NonText guibg=#101010
