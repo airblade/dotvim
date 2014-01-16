@@ -8,7 +8,8 @@ if has("gui_macvim")
   set guioptions-=L               " MacVim: hide left scrollbar.
 endif
 
-set guifont=Inconsolata:h11       " Decent font.
+set guifont=InconsolataForPowerline:h11
+let g:airline_powerline_fonts=1
 
 highlight SPELLING guibg=blue     " Highlight likely typos.
 match SPELLING /toin/

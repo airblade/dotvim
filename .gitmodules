@@ -34,9 +34,6 @@
 [submodule "bundle/vim-blockle"]
 	path = bundle/vim-blockle
 	url = https://github.com/jgdavey/vim-blockle.git
-[submodule "bundle/vim-statline"]
-	path = bundle/vim-statline
-	url = https://github.com/millermedeiros/vim-statline.git
 [submodule "bundle/file-line"]
 	path = bundle/file-line
 	url = https://github.com/bogado/file-line.git
@@ -52,3 +49,6 @@
 [submodule "bundle/vim-color-solarized"]
 	path = bundle/vim-color-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
