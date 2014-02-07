@@ -251,3 +251,7 @@ let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
 " vim-gitgutter
 highlight clear SignColumn  " override default colorscheme
 let g:gitgutter_sign_column_always = 1
+
+" vim-airline
+let g:airline_section_z = '%3l:%-3c [%{bufnr("%")}] '
+
