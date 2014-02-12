@@ -1,20 +1,25 @@
 mileszs/ack.vim
 jlanzarotta/bufexplorer
 airblade/file-line
+vim-scripts/nginx.vim
 wellle/targets.vim
 bling/vim-airline
 jgdavey/vim-blockle
 tpope/vim-bundler
-ap/vim-css-color
 altercation/vim-colors-solarized
 tpope/vim-commentary
+ap/vim-css-color
 tpope/vim-cucumber
 tpope/vim-endwise
-airblade/vim-gitgutter
 tpope/vim-haml
 tommcdo/vim-lion
 tpope/vim-markdown
 tpope/vim-rails
-airblade/vim-rooter
 vim-ruby/vim-ruby
+sunaku/vim-ruby-minitest
 tpope/vim-surround
+
+# local plugins:
+# vim-gitgutter
+# vim-rooter
+# vim-peepopen
