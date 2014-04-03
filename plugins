@@ -19,6 +19,7 @@ tpope/vim-rails
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
 tpope/vim-surround
+tpope/vim-vinegar
 
 # local plugins:
 # vim-gitgutter
