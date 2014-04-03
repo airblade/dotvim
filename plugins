@@ -2,6 +2,7 @@ mileszs/ack.vim
 jlanzarotta/bufexplorer
 airblade/file-line
 vim-scripts/nginx.vim
+AndrewRadev/splitjoin.vim
 wellle/targets.vim
 bling/vim-airline
 jgdavey/vim-blockle
