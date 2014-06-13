@@ -1,5 +1,3 @@
-set nocompatible                  " Must come first because it changes other options.
-
 " Manage the runtime path with  Pathogen.
 execute pathogen#infect()
 
