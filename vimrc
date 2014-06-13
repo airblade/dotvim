@@ -77,6 +77,9 @@ endif
 
 let g:sql_type_default = "mysql"
 
+" Treat buffers from stdin as scratch.
+au StdinReadPost * :set buftype=nofile
+
 " Windowing.
 nnoremap + <C-W>+
 nnoremap - <C-W>-
@@ -97,6 +100,9 @@ function! VeryMagic(text)
   return cmd . a:text . (cmd !~ '/' ? '\v' : '')
 endfunction
 
+" Open help in new tab without splitting the window.
+cnoreabbrev <expr> h ((getcmdtype() == ':' && getcmdpos() <= 2) ? 'tab h' : 'h')
+
 
 " OS X-like space bar to scroll.
 nnoremap <Space> <C-F>
@@ -106,6 +112,10 @@ nnoremap <Leader><space> :noh<CR>
 
 " Kill trailing White Space
 nnoremap <Leader>kws :%s/\s\+$//<CR>
+
+" Convert Ruby hash syntax from 1.8 to 1.9 (current line; TODO: make
+" applicable to a range)
+nnoremap <Leader>rh :s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 
 " <Leader>s shrinks current window to fit size of buffer.
 nnoremap <silent> <Leader>s :call ShrinkWindow()<CR>
@@ -208,6 +218,14 @@ cnoremap WQ wqa!<CR>
 au Filetype css setlocal iskeyword+=-
 au Filetype ruby setlocal iskeyword+=_
 au BufEnter *.js syn match ErrorMsg /console.log/
+
+
+"
+" Colours
+"
+
+hi clear Search
+hi Search guifg=#ffffff guibg=#789abc
 
 
 "
