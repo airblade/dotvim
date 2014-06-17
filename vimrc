@@ -248,13 +248,6 @@ nmap <silent> <unique> <Leader>as :AckFromSearch
 nmap <silent> <unique> <Leader>af :AckFile
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" vim-statline
-let g:statline_syntastic = 0
-let g:statline_show_n_buffers = 0
-let g:statline_filename_relative = 1
-let g:statline_mixed_indent = 0
-"let g:statline_trailing_space = 0
-
 " vim-rooter
 map <Leader>r <Plug>RooterChangeToRootDirectory<CR>
 let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
