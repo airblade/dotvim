@@ -130,13 +130,6 @@ endfunction
 " Directory of current file.
 cnoremap %% <C-R>=expand("%:h")."/"<CR>
 
-" Map § to # for typing convenience
-set iminsert=1
-set imsearch=-1
-noremap  § #
-noremap! § #
-lnoremap § #
-
 " Copy to / paste from system pasteboard.
 " (Use `:put *<CR>` and `:put! *<CR>` for linewise pasting.)
 noremap <Leader>p :set paste<CR>"*p:set nopaste<CR>
