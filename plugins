@@ -6,12 +6,15 @@ AndrewRadev/splitjoin.vim
 wellle/targets.vim
 bling/vim-airline
 jgdavey/vim-blockle
+conradirwin/vim-bracketed-paste
 tpope/vim-bundler
+kchmck/vim-coffee-script
 altercation/vim-colors-solarized
 tpope/vim-commentary
 ap/vim-css-color
 tpope/vim-cucumber
 tpope/vim-endwise
+tpope/vim-eunuch
 tpope/vim-haml
 tommcdo/vim-lion
 tpope/vim-markdown
@@ -21,7 +24,6 @@ sunaku/vim-ruby-minitest
 tpope/vim-surround
 tpope/vim-vinegar
 
-# local plugins:
-# vim-gitgutter
-# vim-rooter
-# vim-peepopen
+/Users/andy/code/src/vim-gitgutter
+/Users/andy/code/src/vim-rooter
+/Users/andy/code/src/vim-peepopen
