@@ -21,6 +21,7 @@ tpope/vim-haml
 tommcdo/vim-lion
 tpope/vim-markdown
 tpope/vim-rails
+tpope/vim-repeat
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
 tpope/vim-surround
