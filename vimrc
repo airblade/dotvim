@@ -81,6 +81,11 @@ if &listchars ==# 'eol:$'
   endif
 endif
 
+" Highlight non-ASCII characters.
+" syntax match nonascii "[^\x00-\x7F]"
+" highlight link nonascii ErrorMsg
+autocmd BufEnter * syn match ErrorMsg /[^\x00-\x7F]/
+
 let g:sql_type_default = "mysql"
 
 " Treat buffers from stdin as scratch.
