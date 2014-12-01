@@ -271,3 +271,12 @@ let g:gitgutter_sign_column_always = 1
 " vim-airline
 let g:airline_section_z = '%3l:%-3c [%{bufnr("%")}] '
 
+" vim-surround
+" Add replacement on # for ruby string interplation.
+let g:surround_35 = "#{\r}"
+
+
+" Open a gem's homepage in the browser.  This is a bit of a hack :/
+" TODO: gemfile only
+nmap <silent> <Leader>g :call system("open $(gem list -d " . expand('<cword>') . " \| awk '/Homepage/ {print $2}')")<CR>
+
