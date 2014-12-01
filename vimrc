@@ -21,8 +21,14 @@ set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 set complete-=i                   " Don't look in included files.
 
-set ignorecase                    " Case-insensitive searching.
-set smartcase                     " But case-sensitive if expression contains a capital letter.
+" Ideally I'd like:
+" - case-sensitive insert-mode completion
+" - smart case-insensitive searching
+" It looks like you can't have both through configuration;
+" you have to write a customer completion function.
+" For now I prioritise the first requirement.
+" set ignorecase                    " Case-insensitive searching.
+" set smartcase                     " But case-sensitive if expression contains a capital letter.
 
 set number                        " Show absolute line numbers (cf. relativenumber).
 set ruler                         " Show cursor position.
