@@ -1,3 +1,5 @@
+# Plugin manifest used by voom - https://github.com/airblade/voom
+
 mileszs/ack.vim
 jlanzarotta/bufexplorer
 airblade/file-line
