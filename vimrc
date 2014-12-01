@@ -265,7 +265,7 @@ map <Leader>r <Plug>RooterChangeToRootDirectory<CR>
 let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
 
 " vim-gitgutter
-highlight clear SignColumn  " override default colorscheme
+highlight clear SignColumn
 let g:gitgutter_sign_column_always = 1
 
 " vim-airline
