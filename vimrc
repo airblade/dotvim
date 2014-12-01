@@ -222,6 +222,7 @@ cnoremap WQ wqa!<CR>
 au Filetype css setlocal iskeyword+=-
 au Filetype ruby setlocal iskeyword+=_
 au BufEnter *.js syn match ErrorMsg /console.log/
+au Filetype coffee syn match ErrorMsg /console.log/
 
 
 "
