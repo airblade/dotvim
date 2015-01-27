@@ -238,7 +238,13 @@ hi Search guifg=#ffffff guibg=#789abc
 "
 
 " PeepOpen
-map <Leader>f <Plug>PeepOpen
+" nnoremap <Leader>f <Plug>PeepOpen
+
+" probe
+" TODO set g:probe_ignore_files per-project with projectionist
+let g:probe_ignore_files = [ 'vendor/fonts/.*', 'tmp/.*', 'log/.*', 'db/sphinx/.*', '.*\.png', '.*\.jpg', '/private/label_sheets/.*', 'public/system/.*' ]
+nnoremap <Leader>b :ProbeFindBuffer<CR>
+
 
 " vim-commentary
 " disable obsolete mapping
@@ -278,5 +284,25 @@ let g:surround_35 = "#{\r}"
 
 " Open a gem's homepage in the browser.  This is a bit of a hack :/
 " TODO: gemfile only
-nmap <silent> <Leader>g :call system("open $(gem list -d " . expand('<cword>') . " \| awk '/Homepage/ {print $2}')")<CR>
+" nmap <silent> <Leader>g :call system("open $(gem list -d " . expand('<cword>') . " \| awk '/Homepage/ {print $2}')")<CR>
 
+let g:projectionist_heuristics = {
+  \   "Gemfile&config/application.rb": {
+  \     "app/models/*.rb": {
+  \       "template": ["class {camelcase} < ActiveRecord::Base", "end"]
+  \     },
+  \     "app/controllers/*.rb": {
+  \       "template": ["class {camelcase} < ApplicationController", "end"],
+  \     },
+  \     "app/presenters/*.rb": {
+  \       "template": ["class {camelcase}", "end"],
+  \       "type": "presenter"
+  \     },
+  \     "app/assets/javascripts/*.js.coffee": {
+  \       "type": "coffee"
+  \     },
+  \     "app/assets/stylesheets/*.css.sass": {
+  \       "type": "sass"
+  \     },
+  \   }
+  \ }

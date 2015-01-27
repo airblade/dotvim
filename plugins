@@ -10,6 +10,7 @@ bling/vim-airline
 jgdavey/vim-blockle
 conradirwin/vim-bracketed-paste
 tpope/vim-bundler
+tpope/vim-characterize
 kchmck/vim-coffee-script
 altercation/vim-colors-solarized
 tpope/vim-commentary
@@ -20,12 +21,15 @@ tpope/vim-eunuch
 tpope/vim-haml
 tommcdo/vim-lion
 tpope/vim-markdown
+tpope/vim-projectionist
 tpope/vim-rails
 tpope/vim-repeat
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
+Z1MM32M4N/vim-superman
 tpope/vim-surround
 tpope/vim-vinegar
+torbiak/probe
 
 /Users/andy/code/src/vim-gitgutter
 /Users/andy/code/src/vim-rooter
