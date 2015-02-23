@@ -68,6 +68,9 @@ set tags=.git/tags,tags           " Look for tags in .git/
 
 set clipboard=unnamed             " Use OS clipboard by default.
 
+" Ensure pathogen can load plugins when restoring a vim session.
+set sessionoptions-=options
+
 set cpo+=J                        " Two spaces delimit my sentences.
 if v:version > 703 || (v:version == 703 && has("patch541"))
   set formatoptions+=j              " Remove comment leaders when joining lines.
