@@ -19,6 +19,7 @@ tpope/vim-cucumber
 tpope/vim-endwise
 tpope/vim-eunuch
 tpope/vim-haml
+jeetsukumaran/vim-indentwise
 tommcdo/vim-lion
 tpope/vim-markdown
 tpope/vim-projectionist
@@ -28,7 +29,7 @@ vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
 Z1MM32M4N/vim-superman
 tpope/vim-surround
-tpope/vim-vinegar
+jeetsukumaran/vim-filebeagle
 torbiak/probe
 
 /Users/andy/code/src/vim-gitgutter
