@@ -1,38 +1,55 @@
 # Plugin manifest used by voom - https://github.com/airblade/voom
 
-mileszs/ack.vim
+# Files and buffers
 jlanzarotta/bufexplorer
+jeetsukumaran/vim-filebeagle
 airblade/file-line
-vim-scripts/nginx.vim
-AndrewRadev/splitjoin.vim
-wellle/targets.vim
-bling/vim-airline
-jgdavey/vim-blockle
-conradirwin/vim-bracketed-paste
-tpope/vim-bundler
-tpope/vim-characterize
-kchmck/vim-coffee-script
+/Users/andy/code/src/PeepOpen-EditorSupport/vim-peepopen
+torbiak/probe
+/Users/andy/code/src/vim-rooter
+
+# git
+/Users/andy/code/src/vim-gitgutter
+
+# Colours
 altercation/vim-colors-solarized
-tpope/vim-commentary
-ap/vim-css-color
-tpope/vim-cucumber
-tpope/vim-endwise
-tpope/vim-eunuch
-tpope/vim-haml
+
+# Indenting, alignment, motions
 jeetsukumaran/vim-indentwise
 tommcdo/vim-lion
+AndrewRadev/splitjoin.vim
+wellle/targets.vim
+
+# Filetypes
+tpope/vim-bundler
+kchmck/vim-coffee-script
+ap/vim-css-color
+tpope/vim-haml
 tpope/vim-markdown
-tpope/vim-projectionist
+vim-scripts/nginx.vim
 tpope/vim-rails
-tpope/vim-repeat
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
-Z1MM32M4N/vim-superman
-tpope/vim-surround
-jeetsukumaran/vim-filebeagle
-torbiak/probe
 
-/Users/andy/code/src/vim-gitgutter
-/Users/andy/code/src/vim-rooter
-/Users/andy/code/src/PeepOpen-EditorSupport/vim-peepopen
+# Miscellaneous
+conradirwin/vim-bracketed-paste
+tpope/vim-characterize
+tpope/vim-commentary
+tpope/vim-endwise
+tpope/vim-projectionist
+tpope/vim-repeat
+tpope/vim-surround
+
+# Searching
+mileszs/ack.vim
+
+# Status line
+bling/vim-airline
+
+# Unix
+tpope/vim-eunuch
+Z1MM32M4N/vim-superman
+
+# Plugin management
 /Users/andy/code/src/voom
+
