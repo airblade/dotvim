@@ -260,9 +260,6 @@ let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerShowDirectories = 0
 
-" rails.vim configuration
-autocmd User Rails silent! Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
-
 " ack.vim
 nmap <silent> <unique> <Leader>a :Ack
 nmap <silent> <unique> <Leader>as :AckFromSearch
