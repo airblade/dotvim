@@ -209,11 +209,6 @@ function! CloseHiddenBuffers()
   endfor
 endfunction
 
-" Speedier quitting.
-cnoremap  Q  qa!<CR>
-cnoremap WQ wqa!<CR>
-
-
 
 "
 " Filetypes
