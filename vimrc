@@ -10,9 +10,6 @@ set background=dark
 colorscheme solarized
 hi LineNr guibg=NONE
 
-set showcmd                       " Display incomplete commands.
-set showmode                      " Display the mode you're in.
-
 set backspace=indent,eol,start    " Intuitive backspacing.
 
 set hidden                        " Handle multiple buffers better.
