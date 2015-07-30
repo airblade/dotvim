@@ -129,8 +129,6 @@ nnoremap <Space> <C-F>
 " <Leader><space> turns off search highlighting.
 nnoremap <Leader><space> :noh<CR>
 
-" Kill trailing White Space
-nnoremap <Leader>kws :%s/\s\+$//<CR>
 
 " Convert Ruby hash syntax from 1.8 to 1.9 (current line; TODO: make
 " applicable to a range)
