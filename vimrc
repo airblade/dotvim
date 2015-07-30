@@ -171,8 +171,6 @@ vnoremap <silent> # yq?p<CR>
 " Duplicate and comment out duplicate.
 nmap <leader>dc :t.<CR>k<Plug>CommentaryLinej
 
-" Markdown preview.  http://rtomayko.github.com/bcat/
-map <Leader>m :!markdown % <Bar>bcat<CR>
 
 " Backspace closes buffer.
 nnoremap <BS> :bd<CR>
