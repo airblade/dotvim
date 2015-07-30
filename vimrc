@@ -119,8 +119,8 @@ function! VeryMagic(text)
   return cmd . a:text . (cmd !~ '/' ? '\v' : '')
 endfunction
 
-" Open help in new tab without splitting the window.
-cnoreabbrev <expr> h ((getcmdtype() == ':' && getcmdpos() <= 2) ? 'tab h' : 'h')
+" Keep help docs in their own tab.
+cnoreabbrev <expr> h ((getcmdtype() == ':' && getcmdpos() <= 2 && &ft != 'help') ? 'tab h' : 'h')
 
 
 " OS X-like space bar to scroll.
