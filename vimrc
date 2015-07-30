@@ -97,13 +97,18 @@ au StdinReadPost * :set buftype=nofile
 " Windowing.
 nnoremap + <C-W>+
 nnoremap - <C-W>-
-nnoremap <C-s> <C-W>s
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
+" Use | and _ to split windows though the latter breaks jump-to-column
+nnoremap <Bar> <C-W>v<C-W><Right>
+nnoremap _ <C-W>s<C-W><Down>
+
+" Move current line / visual line selection up or down.
+nnoremap <C-j> :m+<CR>==
+nnoremap <C-k> :m-2<CR>==
+vnoremap <C-j> :m'>+<CR>gv=gv
+vnoremap <C-k> :m-2<CR>gv=gv
+
 
 " Very magic regexes.
 cnoremap s/ <C-\>eVeryMagic('s/')<CR>
