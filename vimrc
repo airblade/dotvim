@@ -267,8 +267,7 @@ nmap <silent> <unique> <Leader>af :AckFile
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " vim-rooter
-map <Leader>r <Plug>RooterChangeToRootDirectory<CR>
-let g:rooter_patterns = ['Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
+let g:rooter_patterns = ['.root', 'Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
 
 " vim-gitgutter
 highlight clear SignColumn
