@@ -270,7 +270,6 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:rooter_patterns = ['.root', 'Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
 
 " vim-gitgutter
-highlight clear SignColumn
 let g:gitgutter_sign_column_always = 1
 
 " vim-airline
