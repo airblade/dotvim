@@ -128,7 +128,7 @@ nnoremap <Leader><space> :noh<CR>
 
 
 " Convert Ruby hash syntax from 1.8 to 1.9 on current line.
-nnoremap <Leader>rh :let p=@/<CR>:s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>:let @/=p<CR>
+nnoremap <Leader>rh :let _last_pattern=@/<CR>:s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>:let @/=_last_pattern<CR>
 
 " <Leader>s shrinks current window to fit size of buffer.
 nnoremap <silent> <Leader>s :call ShrinkWindow()<CR>
