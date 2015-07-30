@@ -284,6 +284,7 @@ let g:surround_35 = "#{\r}"
 " TODO: gemfile only
 " nmap <silent> <Leader>g :call system("open $(gem list -d " . expand('<cword>') . " \| awk '/Homepage/ {print $2}')")<CR>
 
+" vim-projectionist
 let g:projectionist_heuristics = {
   \   "Gemfile&config/application.rb": {
   \     "app/models/*.rb": {
@@ -301,6 +302,9 @@ let g:projectionist_heuristics = {
   \     },
   \     "app/assets/stylesheets/*.css.sass": {
   \       "type": "sass"
+  \     },
+  \     "config/*": {
+  \       "type": "config"
   \     },
   \   }
   \ }
