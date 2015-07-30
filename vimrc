@@ -173,7 +173,7 @@ nmap <leader>dc :t.<CR>k<Plug>CommentaryLinej
 
 
 " Backspace closes buffer.
-nnoremap <BS> :bd<CR>
+nnoremap <BS> :Bclose<CR>
 
 " Prevent Vim from scrolling original window when splitting horizontally.
 " See example 'Restoring the View' in Vim manual chapter 41.10.
