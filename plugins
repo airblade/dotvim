@@ -37,6 +37,7 @@ conradirwin/vim-bracketed-paste
 tpope/vim-characterize
 tpope/vim-commentary
 tpope/vim-endwise
+/Users/andy/code/src/vim-helptab
 tpope/vim-projectionist
 tpope/vim-repeat
 tpope/vim-surround
