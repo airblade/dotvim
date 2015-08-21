@@ -157,6 +157,14 @@ nnoremap <S-Tab> <C-W>W
 " Use | and _ to split windows though the latter breaks jump-to-column
 nnoremap <Bar> <C-W>v<C-W><Right>
 nnoremap _ <C-W>s<C-W><Down>
+" Jump to window <n>:
+" http://stackoverflow.com/a/6404246/151007
+let i = 1
+while i <= 9
+  execute 'nnoremap <Leader>'.i.' :'.i.'wincmd w<CR>'
+  let i = i + 1
+endwhile
+
 
 " Move current line / visual line selection up or down.
 nnoremap <C-j> :m+<CR>==
