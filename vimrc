@@ -291,6 +291,25 @@ hi clear Search
 hi Search guifg=#ffffff guibg=#789abc
 
 
+function! s:Pulse()
+  setlocal cursorline
+  redraw
+  sleep 100m
+
+  setlocal nocursorline
+  redraw
+  sleep 100m
+
+  setlocal cursorline
+  redraw
+  sleep 100m
+
+  setlocal nocursorline
+  redraw
+endfunction
+autocmd FocusGained * call s:Pulse()
+
+
 "
 " Plugins
 "
