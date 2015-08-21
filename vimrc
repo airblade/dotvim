@@ -31,6 +31,64 @@ set number                        " Show absolute line numbers (cf. relativenumb
 set ruler                         " Show cursor position.
 set laststatus=2                  " Always show a status line.
 
+
+hi clear StatusLine
+hi clear StatusLineNC
+hi StatusLine   term=bold cterm=bold ctermfg=White ctermbg=235
+hi StatusLineNC term=bold cterm=bold ctermfg=White ctermbg=235
+
+" highlight values in terminal vim, colorscheme solarized
+hi User1                      ctermfg=4          guifg=#40ffff            " Identifier
+hi User2                      ctermfg=2 gui=bold guifg=#ffff60            " Statement
+hi User3 term=bold cterm=bold ctermfg=1          guifg=White   guibg=Red  " Error
+hi User4                      ctermfg=1          guifg=Orange             " Special
+hi User5                      ctermfg=10         guifg=#80a0ff            " Comment
+hi User6 term=bold cterm=bold ctermfg=1          guifg=Red                " WarningMsg
+
+function! WindowNumber()
+  return tabpagewinnr(tabpagenr())
+endfunction
+function! TrailingSpaceWarning()
+  if !exists("b:statline_trailing_space_warning")
+    let lineno = search('\s$', 'nw')
+    if lineno != 0
+      let b:statline_trailing_space_warning = '[trailing:'.lineno.']'
+    else
+      let b:statline_trailing_space_warning = ''
+    endif
+  endif
+  return b:statline_trailing_space_warning
+endfunction
+
+" recalculate when idle, and after saving
+augroup statline_trail
+  autocmd!
+  autocmd cursorhold,bufwritepost * unlet! b:statline_trailing_space_warning
+augroup END
+
+set statusline=
+set statusline+=%6*%m%r%*                          " modified, readonly
+set statusline+=\ 
+set statusline+=%1*%t%*                            " file name
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%<                                 " truncate here if needed
+set statusline+=%5*%L\ lines%*                     " number of lines
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%3*%{TrailingSpaceWarning()}%*     " trailing whitespace
+
+set statusline+=%=                                 " switch to RHS
+
+set statusline+=%5*col:%-3.c%*                      " column
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%2*buf:%-3n%*                      " buffer number
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%2*win:%-3.3{WindowNumber()}%*     " window number
+
+
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
@@ -260,9 +318,6 @@ let g:rooter_patterns = ['.root', 'Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
 
 " vim-gitgutter
 let g:gitgutter_sign_column_always = 1
-
-" vim-airline
-let g:airline_section_z = '%3l:%-3c [%{bufnr("%")}] '
 
 " vim-surround
 " Add replacement on # for ruby string interplation.

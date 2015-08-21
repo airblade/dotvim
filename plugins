@@ -45,9 +45,6 @@ tpope/vim-surround
 # Searching
 mileszs/ack.vim
 
-# Status line
-bling/vim-airline
-
 # Unix
 tpope/vim-eunuch
 Z1MM32M4N/vim-superman

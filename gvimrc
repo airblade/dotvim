@@ -8,6 +8,24 @@ if has("gui_macvim")
   set guioptions-=L               " MacVim: hide left scrollbar.
 endif
 
+hi StatusLine   guifg=White guibg=#073642
+hi StatusLineNC guifg=White guibg=#073642
+
+" highlight values in macvim, colorscheme solarized
+hi User1 cterm=bold ctermfg=11 guifg=#268bd2
+hi User2 ctermfg=14 guifg=#859900
+hi User3 term=bold ctermfg=15 ctermbg=12 gui=bold guifg=#dc322f
+hi User4 ctermfg=12 guifg=#dc322f
+hi User5 term=italic ctermfg=11 gui=italic guifg=#586e75
+hi User6 term=bold ctermfg=12 gui=bold guifg=#dc322f
+
+hi User1 guibg=#073642
+hi User2 guibg=#073642
+hi User3 guibg=#073642
+hi User4 guibg=#073642
+hi User5 guibg=#073642
+hi User6 guibg=#073642
+
 set guifont=InconsolataForPowerline:h11
 let g:airline_powerline_fonts=1
 
