@@ -232,7 +232,6 @@ vnoremap <silent> # yq?p<CR>
 " Duplicate and comment out duplicate.
 nmap <leader>dc :t.<CR>k<Plug>CommentaryLinej
 
-
 " Backspace closes buffer.
 nnoremap <BS> :Bclose<CR>
 
