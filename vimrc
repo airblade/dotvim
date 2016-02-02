@@ -70,6 +70,7 @@ augroup END
 set statusline=
 set statusline+=%6*%m%r%*                          " modified, readonly
 set statusline+=\ 
+set statusline+=%5*%{expand('%:h')}/               " relative path to file's directory
 set statusline+=%1*%t%*                            " file name
 set statusline+=\ 
 set statusline+=\ 
