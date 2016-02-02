@@ -174,15 +174,14 @@ nnoremap <C-k> :m-2<CR>==
 vnoremap <C-j> :m'>+<CR>gv=gv
 vnoremap <C-k> :m-2<CR>gv=gv
 
-
 " Very magic regexes.
-cnoremap s/ <C-\>eVeryMagic('s/')<CR>
-cnoremap g/ <C-\>eVeryMagic('g/')<CR>
-cnoremap v/ <C-\>eVeryMagic('v/')<CR>
-function! VeryMagic(text)
-  let cmd = getcmdline()
-  return cmd . a:text . (cmd !~ '/' ? '\v' : '')
-endfunction
+" cnoremap s/ <C-\>eVeryMagic('s/')<CR>
+" cnoremap g/ <C-\>eVeryMagic('g/')<CR>
+" cnoremap v/ <C-\>eVeryMagic('v/')<CR>
+" function! VeryMagic(text)
+"   let cmd = getcmdline()
+"   return cmd . a:text . (cmd !~ '/' ? '\v' : '')
+" endfunction
 
 
 " OS X-like space bar to scroll.
