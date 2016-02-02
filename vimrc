@@ -8,6 +8,7 @@ runtime macros/matchit.vim        " Load matchit.vim plugin.
 
 set background=dark
 colorscheme solarized
+hi! link Visual CursorLine
 hi LineNr guibg=NONE
 
 set backspace=indent,eol,start    " Intuitive backspacing.
