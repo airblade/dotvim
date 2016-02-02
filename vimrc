@@ -310,6 +310,16 @@ endfunction
 autocmd FocusGained * call s:Pulse()
 
 
+" i18n
+" 'foo' -> t('.')
+" YAML syntax check
+nmap <Leader>t ysa')it<Esc>f'ci'.
+nnoremap <leader>y :!ruby -e "require 'yaml'; YAML.load_file('%')"<CR>
+iab han human_attribute_name
+iab mnh model_name.human
+
+
+
 "
 " Plugins
 "
