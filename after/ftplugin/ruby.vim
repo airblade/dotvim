@@ -1,2 +1,4 @@
-setlocal noballooneval
+if exists('&ballooneval')
+  setlocal noballooneval
+endif
 
