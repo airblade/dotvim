@@ -4,13 +4,14 @@
 rbgrouleff/bclose.vim
 jlanzarotta/bufexplorer
 jeetsukumaran/vim-filebeagle
-airblade/file-line
-# /Users/andy/code/src/PeepOpen-EditorSupport/vim-peepopen
+/Users/andy/code/src/file-line
+## /Users/andy/code/src/PeepOpen-EditorSupport/vim-peepopen
 torbiak/probe
 /Users/andy/code/src/vim-rooter
 
 # git
 /Users/andy/code/src/vim-gitgutter
+# tpope/vim-fugitive
 
 # Colours
 altercation/vim-colors-solarized
@@ -33,6 +34,7 @@ vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
 
 # Miscellaneous
+/Users/andy/code/src/vim-accent
 conradirwin/vim-bracketed-paste
 tpope/vim-characterize
 tpope/vim-commentary
