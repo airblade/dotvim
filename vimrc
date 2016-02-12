@@ -85,9 +85,6 @@ set statusline+=%=                                 " switch to RHS
 set statusline+=%5*col:%-3.c%*                      " column
 set statusline+=\ 
 set statusline+=\ 
-set statusline+=%2*buf:%-3n%*                      " buffer number
-set statusline+=\ 
-set statusline+=\ 
 set statusline+=%2*win:%-3.3{WindowNumber()}%*     " window number
 
 
