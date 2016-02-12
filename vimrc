@@ -153,9 +153,9 @@ nnoremap + <C-W>+
 nnoremap - <C-W>-
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
-" Use | and _ to split windows though the latter breaks jump-to-column
-nnoremap <Bar> <C-W>v<C-W><Right>
-nnoremap _ <C-W>s<C-W><Down>
+" Use | and _ to split windows (while preserving original behaviour of [count]bar and [count]_).
+nnoremap <expr><silent> <Bar> v:count == 0 ? "<C-W>v<C-W><Right>" : ":<C-U>normal! 0".v:count."<Bar><CR>"
+nnoremap <expr><silent> _     v:count == 0 ? "<C-W>s<C-W><Down>"  : ":<C-U>normal! ".v:count."_<CR>"
 " Jump to window <n>:
 " http://stackoverflow.com/a/6404246/151007
 let i = 1
