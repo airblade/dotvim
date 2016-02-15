@@ -128,6 +128,11 @@ if v:version > 703 || (v:version == 703 && has("patch541"))
   set formatoptions+=j              " Remove comment leaders when joining lines.
 endif
 
+" Opposite of join (breaK?).
+" A space is replaced with a carriage return; otherwise a carriage return is inserted.
+nnoremap <expr> K getline('.')[col('.') - 1] == ' ' ? "r<CR>" : "i<CR><ESC>"
+
+
 " Show tabs and trailing whitespace visually.
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
