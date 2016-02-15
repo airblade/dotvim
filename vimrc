@@ -74,15 +74,14 @@ set statusline+=%5*%{expand('%:h')}/               " relative path to file's dir
 set statusline+=%1*%t%*                            " file name
 set statusline+=\ 
 set statusline+=\ 
-set statusline+=%<                                 " truncate here if needed
-set statusline+=%5*%L\ lines%*                     " number of lines
-set statusline+=\ 
-set statusline+=\ 
 set statusline+=%3*%{TrailingSpaceWarning()}%*     " trailing whitespace
 
 set statusline+=%=                                 " switch to RHS
 
-set statusline+=%5*col:%-3.c%*                      " column
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%5*%L\ lines%*                     " number of lines
+set statusline+=\ 
 set statusline+=\ 
 set statusline+=\ 
 set statusline+=%2*win:%-3.3{WindowNumber()}%*     " window number
