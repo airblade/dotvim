@@ -106,7 +106,6 @@ set nobackup                      " No backups.
 set nowritebackup                 " No backups.
 set noswapfile                    " No swap files; more hassle than they're worth.
 
-set tildeop                       " Make tilde command behave like an operator.
 set shortmess=atI                 " Avoid unnecessary hit-enter prompts.
 
 set noequalalways                 " Resize windows as little as possible.
