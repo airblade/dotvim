@@ -45,7 +45,7 @@ tpope/vim-repeat
 tpope/vim-surround
 
 # Searching
-mileszs/ack.vim
+rking/ag.vim
 
 # Unix
 tpope/vim-eunuch
