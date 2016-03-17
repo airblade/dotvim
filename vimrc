@@ -130,7 +130,7 @@ endif
 
 " Opposite of join (breaK?).
 " A space is replaced with a carriage return; otherwise a carriage return is inserted.
-nnoremap <expr> K getline('.')[col('.') - 1] == ' ' ? "r<CR>" : "i<CR><ESC>"
+nnoremap <expr> K getline('.')[col('.') - 1] == ' ' ? "r<CR>" : "i<CR><ESC>l"
 
 
 " Show tabs and trailing whitespace visually.
