@@ -330,6 +330,11 @@ nnoremap <Leader>s :w \| !sinter %<CR>
 " Plugins
 "
 
+" Turn off netrw
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+
+
 " PeepOpen
 " nnoremap <Leader>f <Plug>PeepOpen
 
