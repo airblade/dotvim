@@ -215,6 +215,9 @@ noremap <Leader>P :set paste<CR>"*P:set nopaste<CR>
 " Make Y consistent with D and C (instead of yy)
 noremap Y y$
 
+" ~ toggles ' and " in addition to its normal behaviour
+nnoremap <expr> ~ getline('.')[col('.')-1] == "'" ? "r\"l" : getline('.')[col('.')-1] == '"' ? "r'l" : '~'
+
 " Visually select the text that was most recently edited/pasted.
 " Note: gv selects previously selected area.
 nmap gV `[v`]
