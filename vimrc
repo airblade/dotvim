@@ -361,11 +361,6 @@ let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerShowDirectories = 0
 
-" ack.vim
-nmap <silent> <unique> <Leader>a :Ack
-nmap <silent> <unique> <Leader>as :AckFromSearch
-nmap <silent> <unique> <Leader>af :AckFile
-let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " vim-rooter
 let g:rooter_patterns = ['.root', 'Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
