@@ -348,6 +348,12 @@ nnoremap <Leader>b :ProbeFindBuffer<CR>
 " disable obsolete mapping
 nmap \\ <space>
 
+
+" Ag - silver searcher
+command -nargs=1 Ags Ag <args> app/assets/stylesheets lib/assets/stylesheets vendor/assets/stylesheets
+command -nargs=1 Agj Ag <args> app/assets/javascripts lib/assets/javascripts vendor/assets/javascripts
+
+
 " BufExplorer configuration
 "nmap <script> <silent> <unique> <CR> :BufExplorer<CR>
 nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
