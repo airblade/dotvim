@@ -1,22 +1,24 @@
-" Manage the runtime path with  Pathogen.
 execute pathogen#infect()
 
-syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
+syntax enable
+filetype plugin indent on
 
-runtime macros/matchit.vim        " Load matchit.vim plugin.
+runtime macros/matchit.vim
 
 set background=dark
 colorscheme solarized
 hi! link Visual CursorLine
 hi LineNr guibg=NONE
 
-set backspace=indent,eol,start    " Intuitive backspacing.
+set backspace=indent,eol,start
+set hidden
+set wildmenu
+" default wildmode is full
+" set wildmode=list:longest         " Complete files like a shell
+" First tab: show all matches and complete as much as possible.  At this point I can intervene.
+" Second tab: start wildmenu so I can cycle through matches with tab.
+set wildmode=list:longest,full
 
-set hidden                        " Handle multiple buffers better.
-
-set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
 set complete-=i                   " Don't look in included files.
 
 " Ideally I'd like:
@@ -28,9 +30,9 @@ set complete-=i                   " Don't look in included files.
 " set ignorecase                    " Case-insensitive searching.
 " set smartcase                     " But case-sensitive if expression contains a capital letter.
 
-set number                        " Show absolute line numbers (cf. relativenumber).
-set ruler                         " Show cursor position.
-set laststatus=2                  " Always show a status line.
+set number
+set ruler
+set laststatus=2
 
 
 hi clear StatusLine
@@ -87,38 +89,38 @@ set statusline+=\
 set statusline+=%2*win:%-3.3{WindowNumber()}%*     " window number
 
 
-set incsearch                     " Highlight matches as you type.
-set hlsearch                      " Highlight matches.
+set incsearch
+set hlsearch
 
-set wrap                          " Turn on line wrapping.
-set scrolloff=3                   " Show 3 lines of context around the cursor.
-set display+=lastline             " Display as much as possibe of a window's last line.
+set wrap
+set scrolloff=3
+set display+=lastline
 
-set shiftwidth=2                  "
-set tabstop=2                     " Tabs and spaces.
-set expandtab                     "
+set shiftwidth=2
+set tabstop=2
+set expandtab
 
-set title                         " Set the terminal's title
+set title
 
-set visualbell                    " No beeping.
+set visualbell
 
-set nobackup                      " No backups.
-set nowritebackup                 " No backups.
-set noswapfile                    " No swap files; more hassle than they're worth.
+set nobackup
+set nowritebackup
+set noswapfile
 
-set shortmess=atI                 " Avoid unnecessary hit-enter prompts.
+set shortmess=atI
 
-set noequalalways                 " Resize windows as little as possible.
+set noequalalways
 
-set autoread                      " Automatically re-read files changed outside Vim.
-set updatetime=100                " Do things when I stop typing for three-quarters of a second.
+set autoread
+set updatetime=100
 
-set notimeout                     " Don't time out partially entered mapped key sequences.
-set ttimeout                      " But do time out key codes.
+set notimeout
+set ttimeout
 
-set tags=.git/tags,tags           " Look for tags in .git/
+set tags=.git/tags,tags
 
-set clipboard=unnamed             " Use OS clipboard by default.
+set clipboard=unnamed
 
 " Ensure pathogen can load plugins when restoring a vim session.
 set sessionoptions-=options
@@ -195,7 +197,7 @@ nnoremap <Leader><space> :noh<CR>
 nnoremap <Leader>rh :let _last_pattern=@/<CR>:s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>:let @/=_last_pattern<CR>
 
 " <Leader>s shrinks current window to fit size of buffer.
-nnoremap <silent> <Leader>s :call ShrinkWindow()<CR>
+" nnoremap <silent> <Leader>s :call ShrinkWindow()<CR>
 function! ShrinkWindow()
   let line_count = line('$')
   let window_height = winheight(0)
@@ -334,9 +336,6 @@ nnoremap <Leader>s :w \| !sinter %<CR>
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 
-
-" PeepOpen
-" nnoremap <Leader>f <Plug>PeepOpen
 
 " probe
 " TODO set g:probe_ignore_files per-project with projectionist
