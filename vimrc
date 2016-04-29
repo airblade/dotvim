@@ -142,6 +142,8 @@ if &listchars ==# 'eol:$'
     let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
   endif
 endif
+autocmd InsertEnter * set nolist
+autocmd InsertLeave * set list
 
 " Highlight non-ASCII characters.
 " syntax match nonascii "[^\x00-\x7F]"
