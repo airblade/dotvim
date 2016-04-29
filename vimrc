@@ -178,6 +178,26 @@ nnoremap <C-k> :m-2<CR>==
 vnoremap <C-j> :m'>+<CR>gv=gv
 vnoremap <C-k> :m-2<CR>gv=gv
 
+" gM jumps to middle of current screen line's text.
+"
+" (Middle of entire line is easier: virtcol('$')/2)
+function! GotoMiddle()
+  " Get buffer width. (http://stackoverflow.com/a/26318602/151007)
+  redir => signlist
+    execute "silent sign place buffer=".bufnr('')
+  redir end
+  let signlist = split(signlist, '\n')
+  let width = winwidth(0) - &numberwidth - &foldcolumn - (len(signlist) > 2 ? 2 : 0)
+
+  normal g^
+  let first_non_blank_char = col('.') % width
+  normal g$
+  let last_non_blank_char = 1 + ((col('.')-1) % width)
+  let middle_non_blank_char = first_non_blank_char + (last_non_blank_char - first_non_blank_char) / 2
+  execute "normal g0".middle_non_blank_char."l"
+endfunction
+nnoremap gM :call GotoMiddle()<CR>
+
 " Very magic regexes.
 " cnoremap s/ <C-\>eVeryMagic('s/')<CR>
 " cnoremap g/ <C-\>eVeryMagic('g/')<CR>
