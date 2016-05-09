@@ -249,6 +249,10 @@ nmap gV `[v`]
 " Duplicate visual selection.
 vmap D yP'<
 
+" Retain cursor position when visually yanking.
+vnoremap <expr> y 'my"'.v:register.'y`y'
+vnoremap <expr> Y 'my"'.v:register.'Y`y'
+
 " Make * and # work with visual selection.
 " For anything more sophisticated, try:
 " - https://github.com/nelstrom/vim-visual-star-search
