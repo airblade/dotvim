@@ -93,6 +93,10 @@ set incsearch
 set hlsearch
 
 set wrap
+set breakindent
+set breakindentopt=sbr
+" Unicode curly arrow, space
+set showbreak=↪> 
 set scrolloff=3
 set display+=lastline
 
