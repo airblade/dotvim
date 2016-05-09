@@ -182,7 +182,7 @@ nnoremap <C-k> :m-2<CR>==
 vnoremap <C-j> :m'>+<CR>gv=gv
 vnoremap <C-k> :m-2<CR>gv=gv
 
-" gM jumps to middle of current screen line's text.
+" gm jumps to middle of current screen line's text.
 "
 " (Middle of entire line is easier: virtcol('$')/2)
 function! GotoMiddle()
@@ -200,7 +200,7 @@ function! GotoMiddle()
   let middle_non_blank_char = first_non_blank_char + (last_non_blank_char - first_non_blank_char) / 2
   execute "normal g0".middle_non_blank_char."l"
 endfunction
-nnoremap gM :call GotoMiddle()<CR>
+nnoremap <silent> gm :call GotoMiddle()<CR>
 
 " Very magic regexes.
 " cnoremap s/ <C-\>eVeryMagic('s/')<CR>
