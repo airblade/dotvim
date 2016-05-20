@@ -1,6 +1,7 @@
 # Plugin manifest used by voom - https://github.com/airblade/voom
 
 # Files and buffers
+mhinz/vim-startify
 rbgrouleff/bclose.vim
 jlanzarotta/bufexplorer
 justinmk/vim-dirvish
