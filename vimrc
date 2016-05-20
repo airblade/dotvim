@@ -160,8 +160,6 @@ let g:sql_type_default = "mysql"
 au StdinReadPost * :set buftype=nofile
 
 " Windowing.
-nnoremap + <C-W>+
-nnoremap - <C-W>-
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 " Use | and _ to split windows (while preserving original behaviour of [count]bar and [count]_).
