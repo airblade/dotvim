@@ -429,7 +429,25 @@ let g:projectionist_heuristics = {
   \   }
   \ }
 
-" vim-filebeagle
-let g:filebeagle_suppress_keymaps = 1
-map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
+
+" vim-dirvish
+augroup my_dirvish_events
+  autocmd!
+
+  " Sort: folders at top, alphabetical. Keep cursor on path we came from.
+  autocmd FileType dirvish let l=getline('.') |
+        \ sort ir /^.*[^\/]$/ |
+        \ keepjumps call search('\V\^'.escape(l,'\').'\$', 'cw') |
+        \ unlet l
+
+  " Map `gh` to hide dotfiles.
+  " To "toggle" this, just press `R` to reload.
+  autocmd FileType dirvish nnoremap <buffer> gh :keeppatterns g@\v/\.[^\/]+/?$@d<cr>
+
+  autocmd FileType dirvish nnoremap <buffer> + :edit %
+augroup END
+
+
+" Create directories as needed when writing files.
+autocmd BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 
