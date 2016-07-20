@@ -213,9 +213,17 @@ nnoremap <silent> gm :call GotoMiddle()<CR>
 " OS X-like space bar to scroll.
 nnoremap <Space> <C-F>
 
-" <Leader><space> turns off search highlighting.
-nnoremap <Leader><space> :noh<CR>
+" <Leader><space> turns off search highlighting and enable CSS highlighting.
+if exists("*css_color#enable()")
+  nnoremap <Leader><space> :call css_color#enable()<CR>:noh<CR>
+else
+  nnoremap <Leader><space> :noh<CR>
+endif
 
+" Hide CSS highlight when searching so search highlight is visible
+if exists("*css_color#disable()")
+  nnoremap / :call css_color#disable()<CR>/
+endif
 
 " Convert Ruby hash syntax from 1.8 to 1.9 on current line.
 nnoremap <Leader>rh :let _last_pattern=@/<CR>:s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>:let @/=_last_pattern<CR>
