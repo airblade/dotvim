@@ -7,10 +7,10 @@ I use [voom][] and [Pathogen][] to manage my plugins.  (I used to use git submod
 
 ## Learn more with PeepCode
 
-If you want to learn more about Vim, I heartily recommend these PeepCode screecasts:
+If you want to learn more about Vim, I heartily recommend these ~~PeepCode~~ Pluralsight screecasts:
 
-* [Smash Into Vim](http://peepcode.com/products/smash-into-vim-i)
-* [Smash Into Vim II](http://peepcode.com/products/smash-into-vim-ii)
+* [Smash Into Vim](https://www.pluralsight.com/courses/smash-into-vim)
+* [Smash Into Vim II](https://www.pluralsight.com/courses/smash-into-vim)
 
 But don't take my word for it.  Look at [these Tweets](http://airbladesoftware.com/portfolio) instead.
 
