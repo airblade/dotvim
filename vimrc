@@ -404,6 +404,9 @@ let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerShowDirectories = 0
 
+" vim-localorie
+nnoremap <silent> <leader>lt :call localorie#translate()<CR>
+nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
 
 " vim-rooter
 let g:rooter_patterns = ['.root', 'Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
