@@ -12,7 +12,7 @@ If you want to learn more about Vim, I heartily recommend these ~~PeepCode~~ Plu
 * [Smash Into Vim](https://www.pluralsight.com/courses/smash-into-vim)
 * [Smash Into Vim II](https://www.pluralsight.com/courses/smash-into-vim)
 
-But don't take my word for it.  Look at [these Tweets](http://airbladesoftware.com/portfolio) instead.
+But don't take my word for it.  Look at [these Tweets](http://airbladesoftware.com/peepcode-vim) instead.
 
 ;)
 
