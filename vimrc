@@ -126,6 +126,9 @@ set updatetime=100
 
 set notimeout
 set ttimeout
+" Avoid delay with O immediately after Esc.
+" http://stackoverflow.com/a/2158610/151007
+set noesckeys
 
 set tags=.git/tags,tags
 
