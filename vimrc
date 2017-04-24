@@ -288,6 +288,8 @@ nnoremap <BS> :Bclose<CR>
 " See example 'Restoring the View' in Vim manual chapter 41.10.
 nnoremap <C-W>s Hmx``:split<CR>`xzt``
 
+command -range Jsonpp <line1>,<line2>!ruby -rjson -e 'puts JSON.pretty_generate(JSON.parse(ARGF.read))'
+
 " Save all buffers when focus lost, ignoring warnings,
 " and return to normal mode.
 "
