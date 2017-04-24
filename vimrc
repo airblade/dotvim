@@ -24,6 +24,8 @@ set wildmode=list:longest,full
 
 set complete-=i                   " Don't look in included files.
 
+set nrformats-=octal
+
 " Ideally I'd like:
 " - case-sensitive insert-mode completion
 " - smart case-insensitive searching
