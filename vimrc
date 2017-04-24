@@ -476,6 +476,4 @@ augroup END
 " Create directories as needed when writing files.
 autocmd BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 
-" vim-startify
-let g:startify_bookmarks = [{'c': '~/.vimrc'}, {'p': '~/Desktop'}]
 
