@@ -460,18 +460,14 @@ let g:projectionist_heuristics = {
 
 
 " vim-dirvish
+" sort directories before files, alphabetical
+let g:dirvish_mode = ':sort ir /^.*[^\/]$/'
 augroup my_dirvish_events
   autocmd!
 
-  " Sort: folders at top, alphabetical. Keep cursor on path we came from.
-  autocmd FileType dirvish let l=getline('.') |
-        \ sort ir /^.*[^\/]$/ |
-        \ keepjumps call search('\V\^'.escape(l,'\').'\$', 'cw') |
-        \ unlet l
-
   " Map `gh` to hide dotfiles.
   " To "toggle" this, just press `R` to reload.
-  autocmd FileType dirvish nnoremap <buffer> gh :keeppatterns g@\v/\.[^\/]+/?$@d<cr>
+  autocmd FileType dirvish nnoremap <silent><buffer> gh :silent :keeppatterns g@\v/\.[^\/]+/?$@d<cr>
 
   autocmd FileType dirvish nnoremap <buffer> + :edit %
 augroup END
