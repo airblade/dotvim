@@ -3,7 +3,10 @@ execute pathogen#infect()
 syntax enable
 filetype plugin indent on
 
-runtime macros/matchit.vim
+" Load Vim's bundled matchit.vim if we haven't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime macros/matchit.vim
+endif
 
 set background=dark
 colorscheme solarized
