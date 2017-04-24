@@ -2,7 +2,7 @@
 
 I symlink my `~/.vim` directory to this repo.  Similarly for `~/.vimrc` and `~/.gvimrc`.
 
-I use [voom][] and [Pathogen][] to manage my plugins.  (I used to use git submodules but they turned out to be clunky and irritating.)
+I use [voom][] (and Vim 8's packages) to manage my plugins.  (I used to use git submodules but they turned out to be clunky and irritating.)
 
 
 ## Learn more with PeepCode
