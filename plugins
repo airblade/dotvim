@@ -30,6 +30,7 @@ vim-scripts/nginx.vim
 tpope/vim-rails
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
+slim-template/vim-slim
 
 # Miscellaneous
 /Users/andy/code/src/vim-accent
