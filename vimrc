@@ -173,11 +173,9 @@ nnoremap <expr><silent> <Bar> v:count == 0 ? "<C-W>v<C-W><Right>" : ":<C-U>norma
 nnoremap <expr><silent> _     v:count == 0 ? "<C-W>s<C-W><Down>"  : ":<C-U>normal! ".v:count."_<CR>"
 " Jump to window <n>:
 " http://stackoverflow.com/a/6404246/151007
-let i = 1
-while i <= 9
+for i in range(1, 9)
   execute 'nnoremap <Leader>'.i.' :'.i.'wincmd w<CR>'
-  let i = i + 1
-endwhile
+endfor
 
 
 " Move current line / visual line selection up or down.
