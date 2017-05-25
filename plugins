@@ -22,7 +22,6 @@ altercation/vim-colors-solarized
 jeetsukumaran/vim-indentwise
 tommcdo/vim-lion
 AndrewRadev/splitjoin.vim
-wellle/targets.vim
 
 # Filetypes
 tpope/vim-bundler

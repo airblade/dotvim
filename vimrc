@@ -362,6 +362,16 @@ iab mnh model_name.human
 nnoremap <Leader>s :w \| !sinter %<CR>
 
 
+" Extra text objects.
+" Thanks romainl (https://stackoverflow.com/a/44109750/151007)
+for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '-', '#' ]
+    execute 'xnoremap i'.char.' :<C-u>normal! T'.char.'vt'.char.'<CR>'
+    execute 'onoremap i'.char.' :normal vi'.char.'<CR>'
+    execute 'xnoremap a'.char.' :<C-u>normal! F'.char.'vf'.char.'<CR>'
+    execute 'onoremap a'.char.' :normal va'.char.'<CR>'
+endfor
+
+
 
 "
 " Plugins
