@@ -8,6 +8,10 @@ kopischke/vim-fetch
 torbiak/probe
 /Users/andy/code/src/vim-rooter
 
+# Windows
+wellle/visual-split.vim
+/Users/andy/code/src/vim-shrinkage
+
 # git
 /Users/andy/code/src/vim-gitgutter
 
