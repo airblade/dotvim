@@ -363,15 +363,19 @@ nnoremap <Leader>s :w \| !sinter %<CR>
 
 
 " Extra text objects.
-" Thanks romainl (https://stackoverflow.com/a/44109750/151007)
+" Thanks romainl (https://stackoverflow.com/a/44109750)
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '-', '#' ]
-    execute 'xnoremap i'.char.' :<C-u>normal! T'.char.'vt'.char.'<CR>'
+    execute 'xnoremap i'.char.' :<C-U>normal! T'.char.'vt'.char.'<CR>'
     execute 'onoremap i'.char.' :normal vi'.char.'<CR>'
-    execute 'xnoremap a'.char.' :<C-u>normal! F'.char.'vf'.char.'<CR>'
+    execute 'xnoremap a'.char.' :<C-U>normal! F'.char.'vf'.char.'<CR>'
     execute 'onoremap a'.char.' :normal va'.char.'<CR>'
 endfor
 
-
+" Narrow word text object: optional upper-case letter followed by lower-case letters
+" Thanks DJMcMayhem (https://vi.stackexchange.com/a/12491)
+" Thanks Rich (https://vi.stackexchange.com/a/12502)
+xnoremap in :<C-U>normal! l?\a\l\+?s<C-V><CR>v/\L/s-<C-V><CR><CR>
+onoremap in :normal vin<CR>
 
 "
 " Plugins
