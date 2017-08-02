@@ -24,6 +24,8 @@ set complete-=i                   " Don't look in included files.
 
 set nrformats-=octal
 
+set signcolumn=yes
+
 " Ideally I'd like:
 " - case-sensitive insert-mode completion
 " - smart case-insensitive searching
@@ -423,9 +425,6 @@ nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
 
 " vim-rooter
 let g:rooter_patterns = ['.root', 'Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
-
-" vim-gitgutter
-let g:gitgutter_sign_column_always = 1
 
 " vim-surround
 " Add replacement on # for ruby string interplation.
