@@ -7,8 +7,10 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 set background=dark
-colorscheme solarized
-hi! link Visual CursorLine
+" colorscheme solarized
+" hi! link Visual CursorLine
+" colorscheme iceberg
+colorscheme nova
 hi LineNr guibg=NONE
 
 set backspace=indent,eol,start
@@ -21,6 +23,10 @@ set wildmenu
 set wildmode=list:longest,full
 
 set complete-=i                   " Don't look in included files.
+
+" set completeopt+=noinsert  " don't insert
+" set completeopt-=noselect  " do    select
+" set completeopt-=preview
 
 set nrformats-=octal
 
@@ -57,21 +63,21 @@ function! WindowNumber()
   return tabpagewinnr(tabpagenr())
 endfunction
 function! TrailingSpaceWarning()
-  if !exists("b:statline_trailing_space_warning")
+  if !exists("b:statusline_trailing_space_warning")
     let lineno = search('\s$', 'nw')
     if lineno != 0
-      let b:statline_trailing_space_warning = '[trailing:'.lineno.']'
+      let b:statusline_trailing_space_warning = '[trailing:'.lineno.']'
     else
-      let b:statline_trailing_space_warning = ''
+      let b:statusline_trailing_space_warning = ''
     endif
   endif
-  return b:statline_trailing_space_warning
+  return b:statusline_trailing_space_warning
 endfunction
 
 " recalculate when idle, and after saving
-augroup statline_trail
+augroup statusline_trail
   autocmd!
-  autocmd cursorhold,bufwritepost * unlet! b:statline_trailing_space_warning
+  autocmd CursorHold,BufWritePost * unlet! b:statusline_trailing_space_warning
 augroup END
 
 set statusline=
@@ -83,6 +89,9 @@ set statusline+=\
 set statusline+=\ 
 set statusline+=%3*%{TrailingSpaceWarning()}%*     " trailing whitespace
 
+set statusline+=\ 
+set statusline+=%{KiteWhenPython()}
+
 set statusline+=%=                                 " switch to RHS
 
 set statusline+=\ 
@@ -91,8 +100,16 @@ set statusline+=%5*%L\ lines%*                     " number of lines
 set statusline+=\ 
 set statusline+=\ 
 set statusline+=\ 
-set statusline+=%2*win:%-3.3{WindowNumber()}%*     " window number
+set statusline+=%2*%-3.3{bufnr('')}%*
+set statusline+=%2*%-3.3{WindowNumber()}%*         " window number
 
+function! KiteWhenPython()
+  if exists('*kite#statusline') && &filetype ==# 'python'
+    return kite#statusline()
+  else
+    return ''
+  endif
+endfunction
 
 set incsearch
 set hlsearch
@@ -112,12 +129,13 @@ set expandtab
 set title
 
 set visualbell
+set belloff+=ctrlg  " prevent beeping during completion
 
 set nobackup
 set nowritebackup
 set noswapfile
 
-set shortmess=atI
+set shortmess=atIc
 
 set noequalalways
 
@@ -172,12 +190,14 @@ nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 " Use | and _ to split windows (while preserving original behaviour of [count]bar and [count]_).
 nnoremap <expr><silent> <Bar> v:count == 0 ? "<C-W>v<C-W><Right>" : ":<C-U>normal! 0".v:count."<Bar><CR>"
-nnoremap <expr><silent> _     v:count == 0 ? "<C-W>s<C-W><Down>"  : ":<C-U>normal! ".v:count."_<CR>"
+nmap     <expr><silent> _     v:count == 0 ? "<C-W>s<C-W><Down>"  : ":<C-U>normal! ".v:count."_<CR>"
 " Jump to window <n>:
 " http://stackoverflow.com/a/6404246/151007
 for i in range(1, 9)
   execute 'nnoremap <Leader>'.i.' :'.i.'wincmd w<CR>'
 endfor
+" Jump to previous window:
+execute 'nnoremap <Leader>0 :wincmd p<CR>'
 
 
 " Move current line / visual line selection up or down.
@@ -246,6 +266,7 @@ noremap <Leader>P :set paste<CR>"*P:set nopaste<CR>
 noremap Y y$
 
 " ~ toggles ' and " in addition to its normal behaviour
+" TODO toggle - and _
 nnoremap <expr> ~ getline('.')[col('.')-1] == "'" ? "r\"l" : getline('.')[col('.')-1] == '"' ? "r'l" : '~'
 
 " Visually select the text that was most recently edited/pasted.
@@ -376,8 +397,12 @@ endfor
 " Narrow word text object: optional upper-case letter followed by lower-case letters
 " Thanks DJMcMayhem (https://vi.stackexchange.com/a/12491)
 " Thanks Rich (https://vi.stackexchange.com/a/12502)
-xnoremap in :<C-U>normal! l?\a\l\+?s<C-V><CR>v/\L/s-<C-V><CR><CR>
+" On MacVim the forward-search matches are highlighted so turn off the
+" highlighting.
+xnoremap in :<C-U>normal! l?\a\l\+?s<C-V><CR>v/\L/s-<C-V><CR>v:nohlsearch<C-V><CR>gv<CR>
 onoremap in :normal vin<CR>
+
+autocmd! BufRead,BufNewFile *.prawn set filetype=ruby
 
 "
 " Plugins
@@ -387,19 +412,13 @@ onoremap in :normal vin<CR>
 let g:loaded_2html_plugin = 1
 let g:loaded_getscriptPlugin = 1
 let g:loaded_gzip = 1
-let g:loaded_netrw = 1
-let g:loaded_netrwPlugin = 1
+" let g:loaded_netrwPlugin = 1
 let g:loaded_rrhelper = 1
 let g:loaded_spellfile_plugin = 1
 let g:loaded_tarPlugin = 1
 let g:loaded_vimballPlugin = 1
 let g:loaded_zipPlugin = 1
 
-
-" probe
-" TODO set g:probe_ignore_files per-project with projectionist
-let g:probe_ignore_files = [ 'vendor/fonts/.*', 'tmp/.*', 'log/.*', 'db/sphinx/.*', '.*\.png', '.*\.jpg', '/private/label_sheets/.*', 'public/system/.*' ]
-nnoremap <Leader>b :ProbeFindBuffer<CR>
 
 
 " vim-commentary
@@ -408,8 +427,8 @@ nmap \\ <space>
 
 
 " Ag - silver searcher
-command -nargs=1 Ags Ag <args> app/assets/stylesheets lib/assets/stylesheets vendor/assets/stylesheets
-command -nargs=1 Agj Ag <args> app/assets/javascripts lib/assets/javascripts vendor/assets/javascripts
+" command -nargs=1 Ags Ag <args> app/assets/stylesheets lib/assets/stylesheets vendor/assets/stylesheets
+" command -nargs=1 Agj Ag <args> app/assets/javascripts lib/assets/javascripts vendor/assets/javascripts
 
 
 " BufExplorer configuration
@@ -417,7 +436,12 @@ command -nargs=1 Agj Ag <args> app/assets/javascripts lib/assets/javascripts ven
 nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
-let g:bufExplorerShowDirectories = 0
+let g:bufExplorerShowDirectories=0
+
+" vim-gitgutter
+nmap ghs <Plug>GitGutterStageHunk
+nmap ghu <Plug>GitGutterUndoHunk
+nmap ghp <Plug>GitGutterPreviewHunk
 
 " vim-localorie
 nnoremap <silent> <leader>lt :call localorie#translate()<CR>
@@ -425,6 +449,7 @@ nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
 
 " vim-rooter
 let g:rooter_patterns = ['.root', 'Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
+let g:rooter_change_directory_for_non_project_files = 'current'
 
 " vim-surround
 " Add replacement on # for ruby string interplation.
@@ -439,14 +464,17 @@ let g:surround_35 = "#{\r}"
 let g:projectionist_heuristics = {
   \   "Gemfile&config/application.rb": {
   \     "app/models/*.rb": {
-  \       "template": ["class {camelcase} < ActiveRecord::Base", "end"]
+  \       "template": ["class {camelcase|capitalize} < ApplicationRecord", "end"]
   \     },
   \     "app/controllers/*.rb": {
-  \       "template": ["class {camelcase} < ApplicationController", "end"],
+  \       "template": ["class {camelcase|capitalize} < ApplicationController", "end"],
   \     },
   \     "app/presenters/*.rb": {
-  \       "template": ["class {camelcase}", "end"],
+  \       "template": ["class {camelcase|capitalize}", "end"],
   \       "type": "presenter"
+  \     },
+  \     "app/javascripts/*.js": {
+  \       "type": "javascript"
   \     },
   \     "app/assets/javascripts/*.js.coffee": {
   \       "type": "coffee"
@@ -456,6 +484,17 @@ let g:projectionist_heuristics = {
   \     },
   \     "config/*": {
   \       "type": "config"
+  \     },
+  \   },
+  \   "plugin/": {
+  \     "plugin/*.vim": {
+  \       "type": "plugin"
+  \     },
+  \     "autoload/*.vim": {
+  \       "type": "autoload"
+  \     },
+  \     "doc/*.text": {
+  \       "type": "doc"
   \     },
   \   }
   \ }
@@ -479,3 +518,22 @@ augroup END
 autocmd BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 
 
+iab DA DoubleAgent
+iab FA FreeAgent
+
+" let g:fzf_launcher = "~/bin/vim_fzf_launcher %s"
+nmap <Leader>f :Files<CR>
+" let g:rg_command = '
+"       \ rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always"
+"       \ -g "!{.git,node_modules,vendor}/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command.shellescape(<q-args>), 1, <bang>0)
+
+" let g:endwise_abbreviations=1
+" let g:kite_deconflict_cr = 1
+nmap <silent> gK <Plug>(kite-hover)
+" let g:kite_autocomplete=0
+" let g:kite_tab_complete=1
+" let g:kite_documentation_continual=1
+
+" let g:loaded_matchparen=1
