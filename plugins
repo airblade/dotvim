@@ -1,11 +1,14 @@
 # Plugin manifest used by voom - https://github.com/airblade/voom
 
+/Users/andy/code/src/kite-vim-plugin
+
 # Files and buffers
 rbgrouleff/bclose.vim
 jlanzarotta/bufexplorer
 justinmk/vim-dirvish
 kopischke/vim-fetch
-torbiak/probe
+#/usr/local/opt/fzf
+#junegunn/fzf.vim
 /Users/andy/code/src/vim-rooter
 
 # Windows
@@ -16,7 +19,10 @@ wellle/visual-split.vim
 /Users/andy/code/src/vim-gitgutter
 
 # Colours
-altercation/vim-colors-solarized
+# altercation/vim-colors-solarized
+# cocopon/iceberg.vim
+trevordmiller/nova-vim
+# arcticicestudio/nord-vim
 
 # Indenting, alignment, motions
 jeetsukumaran/vim-indentwise
@@ -28,21 +34,21 @@ tpope/vim-bundler
 kchmck/vim-coffee-script
 ap/vim-css-color
 tpope/vim-haml
+pangloss/vim-javascript
 tpope/vim-markdown
-# nginx plugin is maintained in contrib directory of nginx source - https://github.com/nginx/nginx/tree/master/contrib/vim
-# However voom doesn't support this structure.  So use an older version:
-evanmiller/nginx-vim-syntax
+grantlucas/nginx-vim
 tpope/vim-rails
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
 slim-template/vim-slim
 
 # Miscellaneous
-/Users/andy/code/src/vim-accent
+# /Users/andy/code/src/vim-accent
 conradirwin/vim-bracketed-paste
 tpope/vim-characterize
 tpope/vim-commentary
-tpope/vim-endwise
+# tpope/vim-endwise
+/Users/andy/code/src/vim-endwise
 /Users/andy/code/src/vim-helptab
 /Users/andy/code/src/vim-localorie
 /Users/andy/code/src/vim-matchquote
@@ -50,12 +56,9 @@ tpope/vim-projectionist
 tpope/vim-repeat
 tpope/vim-surround
 
-# Searching
-rking/ag.vim
-
 # Unix
 tpope/vim-eunuch
-Z1MM32M4N/vim-superman
+jez/vim-superman
 
 # Plugin management
 /Users/andy/code/src/voom
