@@ -420,19 +420,7 @@ let g:loaded_vimballPlugin = 1
 let g:loaded_zipPlugin = 1
 
 
-
-" vim-commentary
-" disable obsolete mapping
-nmap \\ <space>
-
-
-" Ag - silver searcher
-" command -nargs=1 Ags Ag <args> app/assets/stylesheets lib/assets/stylesheets vendor/assets/stylesheets
-" command -nargs=1 Agj Ag <args> app/assets/javascripts lib/assets/javascripts vendor/assets/javascripts
-
-
 " BufExplorer configuration
-"nmap <script> <silent> <unique> <CR> :BufExplorer<CR>
 nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
@@ -521,19 +509,5 @@ autocmd BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p'
 iab DA DoubleAgent
 iab FA FreeAgent
 
-" let g:fzf_launcher = "~/bin/vim_fzf_launcher %s"
-nmap <Leader>f :Files<CR>
-" let g:rg_command = '
-"       \ rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always"
-"       \ -g "!{.git,node_modules,vendor}/*" '
-
-command! -bang -nargs=* F call fzf#vim#grep(g:rg_command.shellescape(<q-args>), 1, <bang>0)
-
-" let g:endwise_abbreviations=1
-" let g:kite_deconflict_cr = 1
 nmap <silent> gK <Plug>(kite-hover)
-" let g:kite_autocomplete=0
-" let g:kite_tab_complete=1
-" let g:kite_documentation_continual=1
 
-" let g:loaded_matchparen=1
