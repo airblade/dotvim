@@ -43,8 +43,8 @@ sunaku/vim-ruby-minitest
 slim-template/vim-slim
 
 # Miscellaneous
+wincent/terminus
 # /Users/andy/code/src/vim-accent
-conradirwin/vim-bracketed-paste
 tpope/vim-characterize
 tpope/vim-commentary
 # tpope/vim-endwise
