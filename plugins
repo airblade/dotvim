@@ -45,6 +45,7 @@ slim-template/vim-slim
 # Miscellaneous
 wincent/terminus
 # /Users/andy/code/src/vim-accent
+tpope/vim-capslock
 tpope/vim-characterize
 tpope/vim-commentary
 # tpope/vim-endwise
