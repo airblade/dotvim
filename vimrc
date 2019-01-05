@@ -402,6 +402,51 @@ endfor
 xnoremap in :<C-U>normal! l?\a\l\+?s<C-V><CR>v/\L/s-<C-V><CR>v:nohlsearch<C-V><CR>gv<CR>
 onoremap in :normal vin<CR>
 
+
+function! s:indentation(inner)
+  let indent = indent(line('.'))
+
+  if indent == 0
+    if !empty(getline('.'))
+      return
+    endif
+
+    let line = line('.')
+    while empty(getline(line))
+      normal! j
+      let line += 1
+    endwhile
+    return s:indentation(a:inner)
+  endif
+
+  let first_line = search('\v^\s{,'.(indent-1).'}\S', 'nWb') + 1
+  let last_line  = search('\v^\s{,'.(indent-1).'}\S', 'nW')  - 1
+
+  if a:inner
+    while empty(getline(first_line))
+      let first_line += 1
+    endwhile
+
+    while empty(getline(last_line))
+      let last_line -= 1
+    endwhile
+  endif
+
+  " line-wise
+  execute 'normal! '.first_line.'GV'.last_line.'G'
+endfunction
+
+xnoremap <silent> ii :<c-u>call <sid>indentation(1)<cr>
+onoremap <silent> ii :<c-u>call <sid>indentation(1)<cr>
+xnoremap <silent> ai :<c-u>call <sid>indentation(0)<cr>
+onoremap <silent> ai :<c-u>call <sid>indentation(0)<cr>
+
+
+"
+" Filetype
+"
+
+
 autocmd! BufRead,BufNewFile *.prawn set filetype=ruby
 
 "
