@@ -107,16 +107,9 @@ set statusline+=%5*%L\ lines%*                     " number of lines
 set statusline+=\ 
 set statusline+=\ 
 set statusline+=\ 
-set statusline+=%2*%-3.3{bufnr('')}%*
-set statusline+=%2*%-3.3{WindowNumber()}%*         " window number
+set statusline+=%5*b%2*%-4.4{bufnr('')}%*
+set statusline+=%5*w%2*%-2.2{WindowNumber()}%*         " window number
 
-function! KiteWhenPython()
-  if exists('*kite#statusline') && &filetype ==# 'python'
-    return kite#statusline()
-  else
-    return ''
-  endif
-endfunction
 
 set incsearch
 set hlsearch
