@@ -380,6 +380,10 @@ iab mnh model_name.human
 nnoremap <Leader>s :w \| !sinter %<CR>
 
 
+"
+" Text objects
+"
+
 " Extra text objects.
 " Thanks romainl (https://stackoverflow.com/a/44109750)
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '-', '#' ]
