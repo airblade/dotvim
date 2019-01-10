@@ -96,7 +96,7 @@ set statusline+=\
 set statusline+=%3*%{TrailingSpaceWarning()}%*     " trailing whitespace
 
 set statusline+=\ 
-set statusline+=%{KiteWhenPython()}
+set statusline+=%{kite#statusline()}
 
 set statusline+=%=                                 " switch to RHS
 
