@@ -538,7 +538,7 @@ let g:projectionist_heuristics = {
 
 " vim-dirvish
 " sort directories before files, alphabetical
-let g:dirvish_mode = ':sort ir /^.*[^\/]$/'
+let g:dirvish_mode = ':sort /^.*[\/]/'  " from dirvish faq
 augroup my_dirvish_events
   autocmd!
 
