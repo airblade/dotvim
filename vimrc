@@ -162,9 +162,7 @@ set clipboard=unnamed
 set sessionoptions-=options
 
 set cpo+=J                        " Two spaces delimit my sentences.
-if v:version > 703 || (v:version == 703 && has("patch541"))
-  set formatoptions+=j              " Remove comment leaders when joining lines.
-endif
+set formatoptions+=j              " Remove comment leaders when joining lines.
 
 " Opposite of join (breaK?).
 " A space is replaced with a carriage return; otherwise a carriage return is inserted.
