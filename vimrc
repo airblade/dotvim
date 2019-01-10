@@ -128,6 +128,10 @@ set expandtab
 
 set title
 
+if has('nvim')
+  autocmd VimLeave * set titleold=:)
+endif
+
 set visualbell
 set belloff+=ctrlg  " prevent beeping during completion
 
