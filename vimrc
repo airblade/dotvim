@@ -556,6 +556,8 @@ autocmd BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p'
 
 iab DA DoubleAgent
 iab FA FreeAgent
+iab GC GoCardless
+iab tx transaction
 
 nmap <silent> gK <Plug>(kite-hover)
 
