@@ -389,7 +389,9 @@ nnoremap <Leader>s :w \| !sinter %<CR>
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '-', '#' ]
     execute 'xnoremap i'.char.' :<C-U>normal! T'.char.'vt'.char.'<CR>'
     execute 'onoremap i'.char.' :normal vi'.char.'<CR>'
-    execute 'xnoremap a'.char.' :<C-U>normal! F'.char.'vf'.char.'<CR>'
+    " The 'around' text objects exclude the end character
+    " (so they work better with lists).
+    execute 'xnoremap a'.char.' :<C-U>normal! F'.char.'vt'.char.'<CR>'
     execute 'onoremap a'.char.' :normal va'.char.'<CR>'
 endfor
 
