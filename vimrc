@@ -32,9 +32,7 @@ set path=.,,
 
 set complete-=i                   " Don't look in included files.
 
-" set completeopt+=noinsert  " don't insert
-" set completeopt-=noselect  " do    select
-" set completeopt-=preview
+set completeopt=menuone,noinsert
 
 set nrformats-=octal
 
