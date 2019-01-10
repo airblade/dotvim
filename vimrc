@@ -184,8 +184,6 @@ autocmd InsertLeave * set list
 " highlight link nonascii ErrorMsg
 autocmd BufEnter * syn match ErrorMsg /[^\x00-\x7F]/
 
-let g:sql_type_default = "mysql"
-
 " Treat buffers from stdin as scratch.
 au StdinReadPost * :set buftype=nofile
 
