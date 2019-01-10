@@ -16,11 +16,19 @@ hi LineNr guibg=NONE
 set backspace=indent,eol,start
 set hidden
 set wildmenu
+set wildignorecase
 " default wildmode is full
 " set wildmode=list:longest         " Complete files like a shell
 " First tab: show all matches and complete as much as possible.  At this point I can intervene.
 " Second tab: start wildmenu so I can cycle through matches with tab.
 set wildmode=list:longest,full
+set wildignore+=tags,cscope.*
+set wildignore+=*/min/*
+set wildignore+=*/.git/**/*
+set wildignore+=*/node_modules/**/*
+set wildignore+=*/tmp/**/*
+set path=.,,
+" set path=.,**
 
 set complete-=i                   " Don't look in included files.
 
