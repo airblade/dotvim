@@ -468,9 +468,11 @@ let g:loaded_zipPlugin = 1
 
 " BufExplorer configuration
 nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
+let g:bufExplorerDefaultHelp=0
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerShowDirectories=0
+let g:bufExplorerShowNoName=1
 
 " vim-gitgutter
 nmap ghs <Plug>GitGutterStageHunk
