@@ -148,9 +148,11 @@ set updatetime=100
 
 set notimeout
 set ttimeout
-" Avoid delay with O immediately after Esc.
-" http://stackoverflow.com/a/2158610/151007
-set noesckeys
+if !has('nvim')
+  " Avoid delay with O immediately after Esc.
+  " http://stackoverflow.com/a/2158610/151007
+  set noesckeys
+endif
 
 set tags=.git/tags,tags
 
