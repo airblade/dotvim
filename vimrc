@@ -100,6 +100,7 @@ set statusline+=%{kite#statusline()}
 
 set statusline+=%=                                 " switch to RHS
 
+set statusline+=%{exists('*CapsLockStatusline')?CapsLockStatusline():''}
 set statusline+=\ 
 set statusline+=\ 
 set statusline+=%5*%L\ lines%*                     " number of lines
