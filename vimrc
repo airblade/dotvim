@@ -32,7 +32,7 @@ set path=.,,
 
 set complete-=i                   " Don't look in included files.
 
-set completeopt=menuone
+set completeopt=menu
 
 set nrformats-=octal
 
