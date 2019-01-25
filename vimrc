@@ -11,7 +11,6 @@ set background=dark
 " hi! link Visual CursorLine
 " colorscheme iceberg
 colorscheme nova
-hi LineNr guibg=NONE
 
 set backspace=indent,eol,start
 set hidden
