@@ -562,6 +562,10 @@ augroup my_dirvish_events
 augroup END
 
 
+" vim-illuminate
+let g:Illuminate_highlightUnderCursor = 0
+
+
 " Create directories as needed when writing files.
 autocmd BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 

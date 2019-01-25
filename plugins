@@ -52,6 +52,7 @@ tpope/vim-commentary
 /Users/andy/code/src/vim-endwise
 /Users/andy/code/src/vim-helptab
 /Users/andy/code/src/vim-localorie
+RRethy/vim-illuminate
 /Users/andy/code/src/vim-matchquote
 tpope/vim-projectionist
 tpope/vim-repeat
