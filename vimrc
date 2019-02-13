@@ -1,25 +1,13 @@
 syntax enable
 filetype plugin indent on
 
-" Load Vim's bundled matchit.vim if we haven't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime macros/matchit.vim
-endif
-
 set background=dark
-" colorscheme solarized
-" hi! link Visual CursorLine
-" colorscheme iceberg
 colorscheme nova
 
 set backspace=indent,eol,start
 set hidden
 set wildmenu
 set wildignorecase
-" default wildmode is full
-" set wildmode=list:longest         " Complete files like a shell
-" First tab: show all matches and complete as much as possible.  At this point I can intervene.
-" Second tab: start wildmenu so I can cycle through matches with tab.
 set wildmode=list:longest,full
 set wildignore+=tags,cscope.*
 set wildignore+=*/min/*
@@ -27,9 +15,8 @@ set wildignore+=*/.git/**/*
 set wildignore+=*/node_modules/**/*
 set wildignore+=*/tmp/**/*
 set path=.,,
-" set path=.,**
 
-set complete-=i                   " Don't look in included files.
+set complete-=i  " Don't look in included files.
 
 set completeopt=menu
 
@@ -67,6 +54,7 @@ hi User6 term=bold cterm=bold ctermfg=1          guifg=Red                " Warn
 function! WindowNumber()
   return tabpagewinnr(tabpagenr())
 endfunction
+
 function! TrailingSpaceWarning()
   if !exists("b:statusline_trailing_space_warning")
     let lineno = search('\s$', 'nw')
@@ -226,16 +214,6 @@ function! GotoMiddle()
 endfunction
 nnoremap <silent> gm :call GotoMiddle()<CR>
 
-" Very magic regexes.
-" cnoremap s/ <C-\>eVeryMagic('s/')<CR>
-" cnoremap g/ <C-\>eVeryMagic('g/')<CR>
-" cnoremap v/ <C-\>eVeryMagic('v/')<CR>
-" function! VeryMagic(text)
-"   let cmd = getcmdline()
-"   return cmd . a:text . (cmd !~ '/' ? '\v' : '')
-" endfunction
-
-
 " OS X-like space bar to scroll.
 nnoremap <Space> <C-F>
 
@@ -250,9 +228,6 @@ endif
 if exists("*css_color#disable()")
   nnoremap / :call css_color#disable()<CR>/
 endif
-
-" Convert Ruby hash syntax from 1.8 to 1.9 on current line.
-nnoremap <Leader>rh :let _last_pattern=@/<CR>:s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>:let @/=_last_pattern<CR>
 
 " Directory of current file.
 cnoremap %% <C-R>=expand("%:h")."/"<CR>
@@ -273,9 +248,6 @@ nnoremap <expr> ~ getline('.')[col('.')-1] == "'" ? "r\"l" : getline('.')[col('.
 " Note: gv selects previously selected area.
 nmap gV `[v`]
 
-" Duplicate visual selection.
-vmap D yP'<
-
 " Retain cursor position when visually yanking.
 vnoremap <expr> y 'my"'.v:register.'y`y'
 vnoremap <expr> Y 'my"'.v:register.'Y`y'
@@ -287,20 +259,12 @@ vnoremap <expr> Y 'my"'.v:register.'Y`y'
 vnoremap <silent> * yq/p<CR>
 vnoremap <silent> # yq?p<CR>
 
-" Duplicate and comment out duplicate.
-" nmap <leader>dc :t.<CR>k<Plug>CommentaryLinej
-
 " Backspace closes buffer.
 nnoremap <BS> :Bclose<CR>
-
-" Delete forward 1 character
-nnoremap gx lxh
 
 " Prevent Vim from scrolling original window when splitting horizontally.
 " See example 'Restoring the View' in Vim manual chapter 41.10.
 nnoremap <C-W>s Hmx``:split<CR>`xzt``
-
-command -range Jsonpp <line1>,<line2>!ruby -rjson -e 'puts JSON.pretty_generate(JSON.parse(ARGF.read))'
 
 " Save all buffers when focus lost, ignoring warnings,
 " and return to normal mode.
@@ -357,8 +321,8 @@ au Filetype ruby syn match ErrorMsg /puts/
 " Colours
 "
 
-hi clear Search
-hi Search guifg=#ffffff guibg=#789abc
+" hi clear Search
+" hi Search guifg=#ffffff guibg=#789abc
 
 
 function! s:Pulse()
@@ -465,11 +429,13 @@ autocmd! BufRead,BufNewFile *.prawn set filetype=ruby
 " Plugins
 "
 
+packadd! matchit
+
 " Disable unwanted built-in plugins.
 let g:loaded_2html_plugin = 1
 let g:loaded_getscriptPlugin = 1
 let g:loaded_gzip = 1
-" let g:loaded_netrwPlugin = 1
+let g:loaded_netrwPlugin = 1
 let g:loaded_rrhelper = 1
 let g:loaded_spellfile_plugin = 1
 let g:loaded_tarPlugin = 1
@@ -516,12 +482,13 @@ let g:projectionist_heuristics = {
   \     "app/controllers/*.rb": {
   \       "template": ["class {camelcase|capitalize} < ApplicationController", "end"],
   \     },
+  \     "app/jobs/*.rb": {
+  \       "template": ["class {camelcase|capitalize} < ApplicationJob", "end"],
+  \       "type": "presenter"
+  \     },
   \     "app/presenters/*.rb": {
   \       "template": ["class {camelcase|capitalize}", "end"],
   \       "type": "presenter"
-  \     },
-  \     "app/javascripts/*.js": {
-  \       "type": "javascript"
   \     },
   \     "app/assets/javascripts/*.js.coffee": {
   \       "type": "coffee"
@@ -574,5 +541,26 @@ iab FA FreeAgent
 iab GC GoCardless
 iab tx transaction
 
-nmap <silent> gK <Plug>(kite-hover)
+nmap <silent> <buffer> gK <Plug>(kite-docs)
+
+
+let g:dash_scopes = {
+      \ 'ruby': 'r',
+      \ 'javascript': 'js',
+      \ 'css': 'css',
+      \ }
+command! Dash call SearchDash(g:dash_scopes[&filetype])
+function SearchDash(scope)
+  let url = 'dash://'.a:scope.':'.expand('<cword>')
+  call system('open '.url)
+endfunction
+
+
+" fzf.vim
+set rtp+=/usr/local/opt/fzf
+map <leader>f :Files<CR>
+" Ag with word under cursor
+nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
+" Ag with last search pattern
+nnoremap <silent> <leader>ags :Ag <C-R>/<CR>
 
