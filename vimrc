@@ -316,6 +316,8 @@ au BufEnter *.js syn match ErrorMsg /console.log/
 au Filetype coffee syn match ErrorMsg /console.log/
 au Filetype ruby syn match ErrorMsg /puts/
 
+" Get Vim to type the - for Ruby frozen strings.
+autocmd FileType ruby autocmd InsertCharPre <buffer> if v:char == "'" && getline('.')[-1:] =~ '[ (]' | let v:char = "-'" | endif
 
 "
 " Colours
