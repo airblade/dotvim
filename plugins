@@ -1,14 +1,19 @@
 # Plugin manifest used by voom - https://github.com/airblade/voom
 
+
+# Yggdroot/indentLine
+nathanaelkane/vim-indent-guides
+
 /Users/andy/code/src/kite-vim-plugin
+
+# tweekmonster/helpful.vim
 
 # Files and buffers
 rbgrouleff/bclose.vim
 jlanzarotta/bufexplorer
 justinmk/vim-dirvish
 kopischke/vim-fetch
-#/usr/local/opt/fzf
-#junegunn/fzf.vim
+junegunn/fzf.vim
 /Users/andy/code/src/vim-rooter
 
 # Windows
@@ -49,8 +54,8 @@ wincent/terminus
 tpope/vim-capslock
 tpope/vim-characterize
 tpope/vim-commentary
-# tpope/vim-endwise
-/Users/andy/code/src/vim-endwise
+tpope/vim-endwise
+# /Users/andy/code/src/vim-endwise
 /Users/andy/code/src/vim-helptab
 /Users/andy/code/src/vim-localorie
 RRethy/vim-illuminate
