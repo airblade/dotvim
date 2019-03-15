@@ -531,9 +531,10 @@ let g:Illuminate_delay = 5000
 
 " vim-prettier
 let g:prettier#autoformat=0
+let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#semi = 'false'
 let g:prettier#config#trailing_comma = 'none'
-autocmd BufWritePre,InsertLeave,TextChanged *.js,*.json Prettier
+autocmd BufWritePost *.js,*.json Prettier
 
 
 " Create directories as needed when writing files.
