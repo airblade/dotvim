@@ -26,7 +26,7 @@ hi User4 guibg=#073642
 hi User5 guibg=#073642
 hi User6 guibg=#073642
 
-set guifont=Inconsolata:h13
+set guifont=Inconsolata:h9
 
 highlight SPELLING guibg=blue     " Highlight likely typos.
 match SPELLING /toin/
