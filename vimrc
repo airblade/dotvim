@@ -526,6 +526,7 @@ augroup END
 
 " vim-illuminate
 let g:Illuminate_highlightUnderCursor = 0
+let g:Illuminate_delay = 5000
 
 
 " vim-prettier
