@@ -191,8 +191,8 @@ execute 'nnoremap <Leader>0 :wincmd p<CR>'
 " Move current line / visual line selection up or down.
 nnoremap <C-j> :m+<CR>==
 nnoremap <C-k> :m-2<CR>==
-vnoremap <C-j> :m'>+<CR>gv=gv
-vnoremap <C-k> :m-2<CR>gv=gv
+xnoremap <C-j> :m'>+<CR>gv=gv
+xnoremap <C-k> :m-2<CR>gv=gv
 
 " gm jumps to middle of current screen line's text.
 "
@@ -249,15 +249,15 @@ nnoremap <expr> ~ getline('.')[col('.')-1] == "'" ? "r\"l" : getline('.')[col('.
 nmap gV `[v`]
 
 " Retain cursor position when visually yanking.
-vnoremap <expr> y 'my"'.v:register.'y`y'
-vnoremap <expr> Y 'my"'.v:register.'Y`y'
+xnoremap <expr> y 'my"'.v:register.'y`y'
+xnoremap <expr> Y 'my"'.v:register.'Y`y'
 
 " Make * and # work with visual selection.
 " For anything more sophisticated, try:
 " - https://github.com/nelstrom/vim-visual-star-search
 " - https://github.com/thinca/vim-visualstar
-vnoremap <silent> * yq/p<CR>
-vnoremap <silent> # yq?p<CR>
+xnoremap <silent> * yq/p<CR>
+xnoremap <silent> # yq?p<CR>
 
 " Backspace closes buffer.
 nnoremap <BS> :Bclose<CR>
