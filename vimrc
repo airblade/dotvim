@@ -534,6 +534,12 @@ let g:Illuminate_highlightUnderCursor = 0
 let g:Illuminate_delay = 5000
 
 
+" indentLine
+let g:indentLine_char = '⎸'
+let g:indentLine_enabled = 0
+" Toggle with :IndentLinesToggle
+
+
 " vim-prettier
 let g:prettier#autoformat=0
 let g:prettier#config#bracket_spacing = 'true'
