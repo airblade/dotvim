@@ -570,6 +570,10 @@ nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <leader>ags :Ag <C-R>/<CR>
 
 
+" git-messenger
+let g:git_messenger_preview_mods = 'botright'
+
+
 " vim-test
 nmap <silent> gt :w\|:TestNearest<CR>
 nmap <silent> t<C-n> :TestNearest<CR>

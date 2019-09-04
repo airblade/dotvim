@@ -22,6 +22,7 @@ wellle/visual-split.vim
 
 # git
 /Users/andy/code/src/vim-gitgutter
+rhysd/git-messenger.vim
 
 # Colours
 # altercation/vim-colors-solarized
