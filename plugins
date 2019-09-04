@@ -38,7 +38,6 @@ AndrewRadev/splitjoin.vim
 # Filetypes
 tpope/vim-bundler
 kchmck/vim-coffee-script
-ap/vim-css-color
 tpope/vim-haml
 pangloss/vim-javascript
 tpope/vim-markdown
