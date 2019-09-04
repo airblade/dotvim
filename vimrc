@@ -236,11 +236,6 @@ endif
 " Directory of current file.
 cnoremap %% <C-R>=expand("%:h")."/"<CR>
 
-" Copy to / paste from system pasteboard.
-" (Use `:put *<CR>` and `:put! *<CR>` for linewise pasting.)
-noremap <Leader>p :set paste<CR>"*p:set nopaste<CR>
-noremap <Leader>P :set paste<CR>"*P:set nopaste<CR>
-
 " Make Y consistent with D and C (instead of yy)
 noremap Y y$
 
