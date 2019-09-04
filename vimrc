@@ -589,3 +589,4 @@ nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 let test#strategy = 'iterm'  " basic | vimterminal
+let g:test#preserve_screen = 1
