@@ -439,6 +439,10 @@ let g:loaded_vimballPlugin = 1
 let g:loaded_zipPlugin = 1
 
 
+" Helpful.vim
+let g:helpful=1
+
+
 " BufExplorer configuration
 nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
 let g:bufExplorerDefaultHelp=0
