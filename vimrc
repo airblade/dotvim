@@ -154,6 +154,7 @@ set formatoptions+=j              " Remove comment leaders when joining lines.
 set exrc
 set secure
 
+nnoremap gK K
 " Opposite of join (breaK?).
 " A space is replaced with a carriage return; otherwise a carriage return is inserted.
 nnoremap <expr> K getline('.')[col('.') - 1] == ' ' ? "r<CR>" : "i<CR><ESC>l"
@@ -553,8 +554,6 @@ iab DA DoubleAgent
 iab FA FreeAgent
 iab GC GoCardless
 iab tx transaction
-
-nmap <silent> <buffer> gK <Plug>(kite-docs)
 
 
 let g:dash_scopes = {
