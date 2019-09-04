@@ -237,7 +237,7 @@ endif
 cnoremap %% <C-R>=expand("%:h")."/"<CR>
 
 " Make Y consistent with D and C (instead of yy)
-noremap Y y$
+nnoremap Y y$
 
 " ~ toggles ' and " in addition to its normal behaviour
 " TODO toggle - and _
