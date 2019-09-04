@@ -64,6 +64,9 @@ tpope/vim-projectionist
 tpope/vim-repeat
 tpope/vim-surround
 
+# Ruby
+janko/vim-test
+
 # Unix
 tpope/vim-eunuch
 jez/vim-superman

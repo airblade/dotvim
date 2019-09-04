@@ -569,3 +569,12 @@ nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
 " Ag with last search pattern
 nnoremap <silent> <leader>ags :Ag <C-R>/<CR>
 
+
+" vim-test
+nmap <silent> gt :w\|:TestNearest<CR>
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+let test#strategy = 'iterm'  " basic | vimterminal
