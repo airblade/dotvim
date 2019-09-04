@@ -150,6 +150,10 @@ set sessionoptions-=options
 set cpo+=J                        " Two spaces delimit my sentences.
 set formatoptions+=j              " Remove comment leaders when joining lines.
 
+" Project-specific vimrc
+set exrc
+set secure
+
 " Opposite of join (breaK?).
 " A space is replaced with a carriage return; otherwise a carriage return is inserted.
 nnoremap <expr> K getline('.')[col('.') - 1] == ' ' ? "r<CR>" : "i<CR><ESC>l"
