@@ -452,9 +452,10 @@ let g:bufExplorerShowDirectories=0
 let g:bufExplorerShowNoName=1
 
 " vim-gitgutter
-nmap ghs <Plug>GitGutterStageHunk
-nmap ghu <Plug>GitGutterUndoHunk
-nmap ghp <Plug>GitGutterPreviewHunk
+xmap ghs <Plug>(GitGutterStageHunk)
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghp <Plug>(GitGutterPreviewHunk)
 
 " vim-localorie
 nnoremap <silent> <leader>lt :call localorie#translate()<CR>
