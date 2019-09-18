@@ -454,6 +454,9 @@ xmap ghs <Plug>(GitGutterStageHunk)
 nmap ghs <Plug>(GitGutterStageHunk)
 nmap ghu <Plug>(GitGutterUndoHunk)
 nmap ghp <Plug>(GitGutterPreviewHunk)
+highlight DiffAdd    guifg=#a8ce93 guibg=NONE
+highlight DiffDelete guifg=#df8c8c guibg=NONE
+highlight DiffChange guifg=#f2c38f guibg=NONE
 
 " vim-localorie
 nnoremap <silent> <leader>lt :call localorie#translate()<CR>
