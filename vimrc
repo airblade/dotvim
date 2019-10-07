@@ -350,7 +350,7 @@ autocmd FocusGained * call s:Pulse()
 
 " i18n
 " 'foo' -> t('.')
-nmap <Leader>t ysa')it<Esc>f'ci'.
+" nmap <Leader>t ysa')it<Esc>f'ci'.
 iab han human_attribute_name
 iab mnh model_name.human
 
