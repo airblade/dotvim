@@ -24,6 +24,9 @@ set nrformats-=octal
 
 set signcolumn=yes
 
+set splitbelow
+set splitright
+
 " Ideally I'd like:
 " - case-sensitive insert-mode completion
 " - smart case-insensitive searching
@@ -182,8 +185,8 @@ au StdinReadPost * :set buftype=nofile
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 " Use | and _ to split windows (while preserving original behaviour of [count]bar and [count]_).
-nnoremap <expr><silent> <Bar> v:count == 0 ? "<C-W>v<C-W><Right>" : ":<C-U>normal! 0".v:count."<Bar><CR>"
-nmap     <expr><silent> _     v:count == 0 ? "<C-W>s<C-W><Down>"  : ":<C-U>normal! ".v:count."_<CR>"
+nnoremap <expr><silent> <Bar> v:count == 0 ? "<C-W>v" : ":<C-U>normal! 0".v:count."<Bar><CR>"
+nmap     <expr><silent> _     v:count == 0 ? "<C-W>s" : ":<C-U>normal! ".v:count."_<CR>"
 " Jump to window <n>:
 " http://stackoverflow.com/a/6404246/151007
 for i in range(1, 9)
