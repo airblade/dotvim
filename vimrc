@@ -588,11 +588,7 @@ let g:git_messenger_preview_mods = 'botright'
 
 
 " vim-test
-nmap <silent> gt :w\|:TestNearest<CR>
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
+nmap <silent> <Leader>tt :wa\|:TestNearest<CR>
+nmap <silent> <Leader>tf :wa\|:TestFile<CR>
 let test#strategy = 'iterm'  " basic | vimterminal
 let g:test#preserve_screen = 1
