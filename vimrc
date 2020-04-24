@@ -90,6 +90,8 @@ set statusline+=%{kite#statusline()}
 
 set statusline+=%=                                 " switch to RHS
 
+set statusline+=%5*%{empty(&titlestring)?'':&titlestring}%*
+set statusline+=\ 
 set statusline+=%{exists('*CapsLockStatusline')?CapsLockStatusline():''}
 set statusline+=\ 
 set statusline+=\ 
