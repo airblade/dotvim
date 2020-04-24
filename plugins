@@ -49,6 +49,7 @@ sunaku/vim-ruby-minitest
 slim-template/vim-slim
 
 # Miscellaneous
+pechorin/any-jump.vim
 wincent/terminus
 # /Users/andy/code/src/vim-accent
 tpope/vim-capslock
