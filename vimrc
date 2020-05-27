@@ -457,6 +457,11 @@ let g:loaded_zipPlugin = 1
 let g:helpful=1
 
 
+" Any Jump
+let g:any_jump_results_ui_style = 'filename_last'
+let g:any_jump_grouping_enabled = 1
+
+
 " BufExplorer configuration
 nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
 let g:bufExplorerDefaultHelp=0
