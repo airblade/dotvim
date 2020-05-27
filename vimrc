@@ -597,6 +597,9 @@ let g:fzf_layout = { 'window': {
 
 " git-messenger
 let g:git_messenger_preview_mods = 'botright'
+" Stop the preview window closing immediately (unexplained interaction with vim-gitgutter):
+" https://github.com/rhysd/git-messenger.vim/issues/54
+let g:git_messenger_close_on_cursor_moved = v:false
 
 
 " vim-test
