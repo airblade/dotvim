@@ -556,7 +556,7 @@ let g:Illuminate_delay = 5000
 
 " indentLine
 let g:indentLine_char = '⋮'  " ¦
-let g:indentLine_fileType = ['slim']
+let g:indentLine_fileType = ['slim', 'sass']
 let g:indentLine_setColors = 0
 highlight! link Conceal EndOfBuffer
 
