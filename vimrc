@@ -3,6 +3,7 @@ filetype plugin indent on
 
 set background=dark
 colorscheme nova
+highlight! link SignColumn LineNr
 
 set backspace=indent,eol,start
 set hidden
