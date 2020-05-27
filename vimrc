@@ -155,6 +155,16 @@ set sessionoptions-=options
 set cpo+=J                        " Two spaces delimit my sentences.
 set formatoptions+=j              " Remove comment leaders when joining lines.
 
+set grepprg=rg\ --vimgrep\ --smart-case
+set grepformat=%f:%l:%c:%m
+" :Grep pattern [directory]
+command! -bang -nargs=+ -complete=file Grep execute 'silent grep! <args> |
+      \ let @/=split("<args>")[0] |
+      \ call feedkeys(":let &hlsearch=1\<CR>", "n") |
+      \ copen |
+      \ redraw!'
+nnoremap <Leader>g :Grep
+
 " Project-specific vimrc
 set exrc
 set secure
