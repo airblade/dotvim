@@ -588,10 +588,11 @@ endfunction
 " fzf.vim
 set rtp+=/usr/local/opt/fzf
 map <leader>f :Files<CR>
-" Ag with word under cursor
-nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
-" Ag with last search pattern
-nnoremap <silent> <leader>ags :Ag <C-R>/<CR>
+let g:fzf_layout = { 'window': {
+                \ 'width': 0.9,
+                \ 'height': 0.7,
+                \ 'highlight': 'Comment',
+                \ 'border': 'sharp' } }
 
 
 " git-messenger
