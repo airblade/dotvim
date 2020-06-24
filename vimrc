@@ -595,9 +595,10 @@ endfunction
 " fzf.vim
 set rtp+=/usr/local/opt/fzf
 map <leader>f :Files<CR>
+let g:fzf_preview_window = ''
 let g:fzf_layout = { 'window': {
-                \ 'width': 0.9,
-                \ 'height': 0.7,
+                \ 'width': 0.5,
+                \ 'height': 0.1,
                 \ 'highlight': 'Comment',
                 \ 'border': 'sharp' } }
 
