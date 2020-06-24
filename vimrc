@@ -159,11 +159,11 @@ set formatoptions+=j              " Remove comment leaders when joining lines.
 set grepprg=rg\ --vimgrep\ --smart-case
 set grepformat=%f:%l:%c:%m
 " :Grep pattern [directory]
-command! -bang -nargs=+ -complete=file Grep execute 'silent grep! <args> |
+command! -bang -nargs=+ -complete=file Grep silent grep! <q-args> |
       \ let @/=split("<args>")[0] |
       \ call feedkeys(":let &hlsearch=1\<CR>", "n") |
       \ copen |
-      \ redraw!'
+      \ redraw!
 nnoremap <Leader>g :Grep
 
 " Project-specific vimrc
