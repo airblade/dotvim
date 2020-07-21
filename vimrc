@@ -481,7 +481,7 @@ nnoremap <silent> <leader>lt :call localorie#translate()<CR>
 nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
 
 " vim-rooter
-let g:rooter_patterns = ['.root', 'Rakefile', 'Gemfile', '.git/', 'CHANGELOG']
+let g:rooter_patterns = ['.git/', 'Gemfile', '.root']
 let g:rooter_change_directory_for_non_project_files = 'current'
 
 " vim-surround
