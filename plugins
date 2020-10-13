@@ -1,9 +1,5 @@
 # Plugin manifest used by voom - https://github.com/airblade/voom
 
-
-# tweekmonster/local-indent.vim
-Yggdroot/indentLine
-
 /Users/andy/code/src/kite-vim-plugin
 
 tweekmonster/helpful.vim
