@@ -338,6 +338,11 @@ au Filetype coffee syn match ErrorMsg /console.log/
 au Filetype ruby syn match ErrorMsg /puts/
 au FileType eruby.yaml,yaml,yml setlocal commentstring=#\ %s
 
+au Filetype js nnoremap <buffer> <leader>L iconsole.log()<Esc>
+au Filetype js inoremap <buffer> <leader>L console.log()<Left>
+au Filetype ruby nnoremap <buffer> <leader>L iRails.logger.info("[aws]" )<Esc>
+au Filetype ruby inoremap <buffer> <leader>L Rails.logger.info.("[aws] ")<Left><Left>
+
 
 "
 " Colours
