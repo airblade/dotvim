@@ -516,7 +516,7 @@ let g:projectionist_heuristics = {
   \       "template": ["class {camelcase|capitalize} < ApplicationJob", "end"],
   \       "type": "presenter"
   \     },
-  \     "app/presenters/*.rb": {
+  \     "app/presenters/*_presenter.rb": {
   \       "template": ["class {camelcase|capitalize}", "end"],
   \       "type": "presenter"
   \     },
