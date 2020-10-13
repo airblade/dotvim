@@ -525,7 +525,14 @@ let g:projectionist_heuristics = {
   \     },
   \     "app/frontend/javascripts/controllers/*_controller.js": {
   \       "type": "stimulus",
-  \       "template": ["import {open} Controller {close} from 'stimulus'", "", "export default class extends Controller {", "", "  static targets = []", "", "}"]
+  \       "template": [
+  \         "import {open} Controller {close} from 'stimulus'",
+  \         "",
+  \         "export default class extends Controller {",
+  \         "",
+  \         "  static targets = []",
+  \         "",
+  \         "}"]
   \     },
   \     "config/*": {
   \       "type": "config"
