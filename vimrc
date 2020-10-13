@@ -632,3 +632,5 @@ nmap <silent> <Leader>tt :wa\|:TestNearest<CR>
 nmap <silent> <Leader>tf :wa\|:TestFile<CR>
 let test#strategy = 'iterm'  " basic | vimterminal
 let g:test#preserve_screen = 1
+
+let g:kite_supported_languages = ['python','javascript','go', 'css', 'html']
