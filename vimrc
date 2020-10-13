@@ -1,9 +1,12 @@
-syntax enable
 filetype plugin indent on
 
+if has("termguicolors")
+  set termguicolors
+endif
+
+syntax enable
 set background=dark
-colorscheme nova
-highlight! link SignColumn LineNr
+colorscheme neodark
 
 set backspace=indent,eol,start
 set hidden

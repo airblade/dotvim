@@ -25,10 +25,7 @@ wellle/visual-split.vim
 rhysd/git-messenger.vim
 
 # Colours
-# altercation/vim-colors-solarized
-# cocopon/iceberg.vim
-trevordmiller/nova-vim
-# arcticicestudio/nord-vim
+KeitaNakamura/neodark.vim
 
 # Indenting, alignment, motions
 jeetsukumaran/vim-indentwise
