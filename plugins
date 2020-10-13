@@ -31,7 +31,6 @@ Yggdroot/indentLine
 
 # Filetypes
 tpope/vim-bundler
-kchmck/vim-coffee-script
 tpope/vim-haml
 pangloss/vim-javascript
 tpope/vim-markdown
