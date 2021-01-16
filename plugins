@@ -51,6 +51,7 @@ tpope/vim-commentary
 tpope/vim-endwise
 # /Users/andy/code/src/vim-endwise
 /Users/andy/code/src/vim-helptab
+lfv89/vim-interestingwords
 /Users/andy/code/src/vim-localorie
 RRethy/vim-illuminate
 /Users/andy/code/src/vim-matchquote
