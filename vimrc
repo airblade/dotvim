@@ -166,10 +166,12 @@ set grepformat=%f:%l:%c:%m
 "
 " Escaping is problematic.
 command! -bang -nargs=+ -complete=file Grep silent grep! <args> |
+      \ if !empty(getqflist()) |
       \ let @/=split("<args>")[0] |
       \ call feedkeys(":let &hlsearch=1\<CR>", "n") |
       \ copen |
-      \ redraw!
+      \ redraw! |
+      \ endif
 nnoremap <Leader>g :Grep
 
 " Project-specific vimrc
