@@ -633,4 +633,47 @@ nmap <silent> <Leader>tf :wa\|:TestFile<CR>
 let test#strategy = 'iterm'  " basic | vimterminal
 let g:test#preserve_screen = 1
 
+
+
+" Make cursor stand out when in a highlighted search match.
+" https://github.com/KeitaNakamura/neodark.vim/issues/25
+"
+" Or use search_count().exact_match on Vim 8.2.0877
+function! CursorInSearchMatch(...)
+  if !&hlsearch || !v:hlsearch | return 0 | endif
+  let [match,start,stop] = matchstrpos(getline('.'), @/, (a:0 ? a:1 : 0))
+  if empty(match) | return 0 | endif
+  let col = getcurpos()[2]
+  if col <= start | return 0 | endif
+  if col <= stop  | return 1 | endif
+  return CursorInSearchMatch(stop)
+endfunction
+
+let s:group = synIDtrans(hlID('Cursor'))
+let s:cursor_gui_fg   = synIDattr(s:group, 'fg', 'gui')
+let s:cursor_gui_bg   = synIDattr(s:group, 'bg', 'gui')
+let s:cursor_cterm_fg = synIDattr(s:group, 'fg', 'cterm')
+let s:cursor_cterm_bg = synIDattr(s:group, 'bg', 'cterm')
+execute 'highlight CursorOriginal guifg='.s:cursor_gui_fg.' guibg='.s:cursor_gui_bg.' ctermfg='.s:cursor_cterm_fg.' ctermbg='.s:cursor_cterm_bg
+" FIXME doesn't work in terminal vim
+highlight CursorSearch guifg=red guibg=white ctermfg=160 ctermbg=231
+
+let s:cursor_original = 1
+function! UpdateCursor()
+  if CursorInSearchMatch()
+    if s:cursor_original
+      let s:cursor_original = 0
+      " highlight clear Cursor
+      highlight! link Cursor CursorSearch
+    endif
+  else
+    if !s:cursor_original
+      let s:cursor_original = 1
+      " highlight clear Cursor
+      highlight! link Cursor CursorOriginal
+    endif
+  endif
+endfunction
+
+autocmd CursorMoved * call UpdateCursor()
 let g:kite_supported_languages = ['python','javascript','go', 'css', 'html']
