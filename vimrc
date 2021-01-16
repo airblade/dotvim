@@ -334,17 +334,17 @@ nnoremap gb :<C-U>call Browse(expand('<cfile>'))<CR>
 " Filetypes
 "
 
-au Filetype css setlocal iskeyword+=-
-au Filetype ruby setlocal iskeyword+=_
+au FileType css setlocal iskeyword+=-
+au FileType ruby setlocal iskeyword+=_
 au BufEnter *.js syn match ErrorMsg /console.log/
-au Filetype coffee syn match ErrorMsg /console.log/
-au Filetype ruby syn match ErrorMsg /puts/
-au FileType eruby.yaml,yaml,yml setlocal commentstring=#\ %s
+au FileType coffee syn match ErrorMsg /console.log/
+au FileType ruby syn match ErrorMsg /puts/
+au Filetype eruby.yaml,yaml,yml setlocal commentstring=#\ %s
 
-au Filetype js nnoremap <buffer> <leader>L iconsole.log()<Esc>
-au Filetype js inoremap <buffer> <leader>L console.log()<Left>
-au Filetype ruby nnoremap <buffer> <leader>L iRails.logger.info("[aws]" )<Esc>
-au Filetype ruby inoremap <buffer> <leader>L Rails.logger.info.("[aws] ")<Left><Left>
+au FileType javascript nnoremap <buffer> <leader>L iconsole.log()<Esc>
+au FileType javascript inoremap <buffer> <leader>L console.log()<Left>
+au FileType ruby nnoremap <buffer> <leader>L iRails.logger.info("[aws]" )<Esc>
+au FileType ruby inoremap <buffer> <leader>L Rails.logger.info.("[aws] ")<Left><Left>
 
 
 "
