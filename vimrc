@@ -491,7 +491,7 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 
 " vim-localorie
 nnoremap <silent> <leader>lt :call localorie#translate()<CR>
-nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
+nnoremap <silent> <leader>le :echo localorie#expand_key()<CR>
 
 " vim-rooter
 let g:rooter_patterns = ['!^fixtures','.git']
