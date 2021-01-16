@@ -43,6 +43,7 @@ set splitright
 set number
 set ruler
 set laststatus=2
+set fillchars+=stl:\ ,stlnc:\ 
 
 
 hi clear StatusLine
