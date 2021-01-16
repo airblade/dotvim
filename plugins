@@ -1,4 +1,7 @@
 # Plugin manifest used by voom - https://github.com/airblade/voom
+# jiangmiao/auto-pairs
+# rstacruz/vim-closer
+# vim-airline/vim-airline
 
 /Users/andy/code/src/kite-vim-plugin
 
@@ -18,7 +21,9 @@ wellle/visual-split.vim
 
 # git
 /Users/andy/code/src/vim-gitgutter
-rhysd/git-messenger.vim
+# rhysd/conflict-marker.vim
+# rhysd/git-messenger.vim
+tpope/vim-fugitive
 
 # Colours
 KeitaNakamura/neodark.vim
@@ -40,6 +45,7 @@ tpope/vim-rails
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
 slim-template/vim-slim
+# tpope/vim-scriptease
 
 # Miscellaneous
 pechorin/any-jump.vim
@@ -49,7 +55,6 @@ tpope/vim-capslock
 tpope/vim-characterize
 tpope/vim-commentary
 tpope/vim-endwise
-# /Users/andy/code/src/vim-endwise
 /Users/andy/code/src/vim-helptab
 lfv89/vim-interestingwords
 /Users/andy/code/src/vim-localorie
@@ -58,6 +63,7 @@ RRethy/vim-illuminate
 tpope/vim-projectionist
 tpope/vim-repeat
 tpope/vim-surround
+tpope/vim-unimpaired
 
 # Ruby
 janko/vim-test
