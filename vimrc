@@ -637,6 +637,7 @@ nmap <silent> <Leader>tf :wa\|:TestFile<CR>
 let test#strategy = 'iterm'  " basic | vimterminal
 let g:test#preserve_screen = 1
 
+let g:kite_supported_languages = ['python','javascript','go', 'css', 'html', 'ruby']
 
 
 " Make cursor stand out when in a highlighted search match.
@@ -680,4 +681,3 @@ function! UpdateCursor()
 endfunction
 
 autocmd CursorMoved * call UpdateCursor()
-let g:kite_supported_languages = ['python','javascript','go', 'css', 'html']
