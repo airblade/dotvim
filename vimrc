@@ -202,6 +202,20 @@ autocmd BufEnter * syn match ErrorMsg /[^\x00-\x7F]/
 " Treat buffers from stdin as scratch.
 au StdinReadPost * :set buftype=nofile
 
+" Writing help files
+" https://vi.stackexchange.com/a/3698/1643
+augroup help_start
+  autocmd!
+  autocmd FileType help call SetHelpFiletype()
+augroup END
+function! SetHelpFiletype()
+  augroup help_insert
+    autocmd!
+    autocmd InsertEnter <buffer> setlocal conceallevel=0 | highlight clear Ignore
+    autocmd InsertLeave <buffer> setlocal conceallevel=2
+  augroup END
+endfunction
+
 " Windowing.
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
