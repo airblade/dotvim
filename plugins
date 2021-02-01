@@ -27,6 +27,7 @@ tpope/vim-fugitive
 
 # Colours
 KeitaNakamura/neodark.vim
+/Users/andy/code/src/vim-current-search-match
 
 # Indenting, alignment, motions
 jeetsukumaran/vim-indentwise

@@ -640,37 +640,3 @@ let g:test#preserve_screen = 1
 let g:kite_supported_languages = ['python','javascript','go', 'css', 'html', 'ruby']
 
 
-" Make current search match, i.e. the match the cursor is in, stand out.
-" https://github.com/KeitaNakamura/neodark.vim/issues/25
-
-" Returns [start, stop] if the cursor is in a search match, where start and
-" stop are column numbers.
-" Returns [0, 0] if the cursor is not in a search match.
-function! CursorInSearchMatch(...)
-  if !&hlsearch || !v:hlsearch | return [0,0] | endif
-  let [match,start,stop] = matchstrpos(getline('.'), @/, (a:0 ? a:1 : 0))
-  if empty(match) | return [0,0] | endif
-  let col = getcurpos()[2]
-  if col <= start | return [0,0] | endif
-  if col <= stop  | return [start,stop] | endif
-  return CursorInSearchMatch(stop)
-endfunction
-
-let s:current_search_pos = []
-let s:current_search_match = 0
-function! UpdateCursor()
-  let [start, stop] = CursorInSearchMatch()
-  if [start, stop] != [0, 0]
-    if s:current_search_pos != [start, stop]
-      let s:current_search_pos = [start, stop]
-      if s:current_search_match | call matchdelete(s:current_search_match) | endif
-      let s:current_search_match = matchaddpos('StatusLineTerm', [[line('.'), start+1, stop-start]])
-    endif
-  else
-    let s:current_search_pos = []
-    if s:current_search_match | call matchdelete(s:current_search_match) | endif
-    let s:current_search_match = 0
-  endif
-endfunction
-
-autocmd CursorMoved * call UpdateCursor()
