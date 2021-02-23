@@ -405,7 +405,7 @@ nnoremap <Leader>s :w \| !sinter %<CR>
 
 " Extra text objects.
 " Thanks romainl (https://stackoverflow.com/a/44109750)
-for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '-', '#' ]
+for char in [ '_', '.', ':', ',', ';', '/', '<bslash>', '*', '+', '%', '-', '#' ]
     execute 'xnoremap i'.char.' :<C-U>normal! T'.char.'vt'.char.'<CR>'
     execute 'onoremap i'.char.' :normal vi'.char.'<CR>'
     " The 'around' text objects exclude the end character
