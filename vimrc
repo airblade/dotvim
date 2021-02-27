@@ -613,6 +613,8 @@ iab DA DoubleAgent
 iab FA FreeAgent
 iab GC GoCardless
 iab tx transaction
+iab qv quo_vadis
+iab QV QuoVadis
 
 
 let g:dash_scopes = {
