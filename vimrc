@@ -358,7 +358,7 @@ au Filetype eruby.yaml,yaml,yml setlocal commentstring=#\ %s
 au FileType javascript nnoremap <buffer> <leader>L iconsole.log()<Esc>
 au FileType javascript inoremap <buffer> <leader>L console.log()<Left>
 au FileType ruby nnoremap <buffer> <leader>L iRails.logger.info("[aws]" )<Esc>
-au FileType ruby inoremap <buffer> <leader>L Rails.logger.info.("[aws] ")<Left><Left>
+au FileType ruby inoremap <buffer> <leader>L Rails.logger.info("[aws] ")<Left><Left>
 
 
 "
