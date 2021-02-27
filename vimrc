@@ -262,9 +262,9 @@ nnoremap <Space> <C-F>
 
 " <Leader><space> turns off search highlighting and enable CSS highlighting.
 if exists("*css_color#enable()")
-  nnoremap <Leader><space> :call css_color#enable()<CR>:noh<CR>
+  nnoremap <Leader><space> :call css_color#enable()<CR>:nohlsearch<CR>
 else
-  nnoremap <Leader><space> :noh<CR>
+  nnoremap <Leader><space> :nohlsearch<CR>
 endif
 
 " Hide CSS highlight when searching so search highlight is visible
