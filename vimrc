@@ -654,5 +654,6 @@ let test#strategy = 'iterm'  " basic | vimterminal
 let g:test#preserve_screen = 1
 
 let g:kite_supported_languages = ['python','javascript','go', 'css', 'html', 'ruby']
+let g:kite_auto_complete = 0
 
 
