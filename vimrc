@@ -596,15 +596,6 @@ let g:indentLine_setColors = 0
 highlight! link Conceal EndOfBuffer
 
 
-
-" vim-prettier
-let g:prettier#autoformat=0
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#semi = 'false'
-let g:prettier#config#trailing_comma = 'none'
-" autocmd BufWritePost *.js,*.json Prettier
-
-
 " Create directories as needed when writing files.
 autocmd BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 

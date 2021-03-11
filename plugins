@@ -41,7 +41,6 @@ tpope/vim-haml
 pangloss/vim-javascript
 tpope/vim-markdown
 grantlucas/nginx-vim
-prettier/vim-prettier
 tpope/vim-rails
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
