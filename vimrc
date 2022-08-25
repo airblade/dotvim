@@ -185,14 +185,24 @@ nnoremap <expr> K getline('.')[col('.') - 1] == ' ' ? "r<CR>" : "i<CR><ESC>l"
 
 
 " Show tabs and trailing whitespace visually.
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
-  endif
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+  set listchars=tab:⇥\ ,trail:…,extends:⇉,precedes:⇇,nbsp:␣
 endif
+set list
 autocmd InsertEnter * set nolist
 autocmd InsertLeave * set list
+
+function! ToggleLeadMultiSpace(...)
+  if a:0 ? a:1 : &listchars !~ 'leadmultispace'
+    setlocal listchars+=leadmultispace:\ \ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮
+  else
+    setlocal listchars-=leadmultispace:\ \ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮
+  endif
+endfunction
+nmap <silent> <leader>ti :call ToggleLeadMultiSpace()<CR>
+autocmd BufEnter * call ToggleLeadMultiSpace(index(['slim','sass','yml','yaml','eruby.yaml'], &ft) >= 0)
+
 
 " Highlight non-ASCII characters.
 " syntax match nonascii "[^\x00-\x7F]"
@@ -587,13 +597,6 @@ augroup END
 " vim-illuminate
 let g:Illuminate_highlightUnderCursor = 0
 let g:Illuminate_delay = 5000
-
-
-" indentLine
-let g:indentLine_char = '⋮'  " ¦
-let g:indentLine_fileType = ['slim', 'sass', 'yml', 'erb']
-let g:indentLine_setColors = 0
-highlight! link Conceal EndOfBuffer
 
 
 " Create directories as needed when writing files.
