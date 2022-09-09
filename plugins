@@ -1,9 +1,5 @@
 # Plugin manifest used by voom - https://github.com/airblade/voom
-# jiangmiao/auto-pairs
-# rstacruz/vim-closer
-# vim-airline/vim-airline
-
-/Users/andy/code/src/kite-vim-plugin
+powerman/vim-plugin-AnsiEsc
 
 tweekmonster/helpful.vim
 
@@ -16,6 +12,7 @@ junegunn/fzf.vim
 /Users/andy/code/src/vim-rooter
 
 # Windows
+andymass/vim-tradewinds
 wellle/visual-split.vim
 /Users/andy/code/src/vim-shrinkage
 
@@ -25,27 +22,34 @@ wellle/visual-split.vim
 # rhysd/git-messenger.vim
 tpope/vim-fugitive
 
-# Colours
+# Colours / highlighting
+sainnhe/everforest
 KeitaNakamura/neodark.vim
 /Users/andy/code/src/vim-current-search-match
+RRethy/vim-illuminate
+lfv89/vim-interestingwords
+/Users/andy/code/src/vim-highline
+ap/vim-css-color
 
 # Indenting, alignment, motions
 jeetsukumaran/vim-indentwise
 tommcdo/vim-lion
-AndrewRadev/splitjoin.vim
-Yggdroot/indentLine
+jrudess/vim-foldtext
 
 # Filetypes
 tpope/vim-bundler
+isobit/vim-caddyfile
 tpope/vim-haml
 pangloss/vim-javascript
 tpope/vim-markdown
+amadeus/vim-mjml
 grantlucas/nginx-vim
 tpope/vim-rails
 vim-ruby/vim-ruby
 sunaku/vim-ruby-minitest
 slim-template/vim-slim
 # tpope/vim-scriptease
+itspriddle/vim-marked
 
 # Miscellaneous
 pechorin/any-jump.vim
@@ -56,10 +60,9 @@ tpope/vim-characterize
 tpope/vim-commentary
 tpope/vim-endwise
 /Users/andy/code/src/vim-helptab
-lfv89/vim-interestingwords
 /Users/andy/code/src/vim-localorie
-RRethy/vim-illuminate
 /Users/andy/code/src/vim-matchquote
+/Users/andy/code/src/vim-tag-closer
 tpope/vim-projectionist
 tpope/vim-repeat
 tpope/vim-surround

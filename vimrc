@@ -31,14 +31,8 @@ set signcolumn=yes
 set splitbelow
 set splitright
 
-" Ideally I'd like:
-" - case-sensitive insert-mode completion
-" - smart case-insensitive searching
-" It looks like you can't have both through configuration;
-" you have to write a customer completion function.
-" For now I prioritise the first requirement.
-" set ignorecase                    " Case-insensitive searching.
-" set smartcase                     " But case-sensitive if expression contains a capital letter.
+set ignorecase
+set smartcase
 
 set number
 set ruler
@@ -90,11 +84,9 @@ set statusline+=\
 set statusline+=\ 
 set statusline+=%3*%{TrailingSpaceWarning()}%*     " trailing whitespace
 
-set statusline+=\ 
-set statusline+=%{kite#statusline()}
-
 set statusline+=%=                                 " switch to RHS
 
+set statusline+=\ 
 set statusline+=%5*%{empty(&titlestring)?'':&titlestring}%*
 set statusline+=\ 
 set statusline+=%{exists('*CapsLockStatusline')?CapsLockStatusline():''}
@@ -114,7 +106,7 @@ set wrap
 set breakindent
 set breakindentopt=sbr
 " Unicode curly arrow, space
-set showbreak=↪> 
+set showbreak=↪\ 
 set scrolloff=3
 set display+=lastline
 
@@ -135,7 +127,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-set shortmess=atIc
+" https://github.com/prettier/vim-prettier/issues/284
+" set shortmess=atIc
+set shortmess=atIco
 
 set noequalalways
 
@@ -361,15 +355,24 @@ nnoremap gb :<C-U>call Browse(expand('<cfile>'))<CR>
 au FileType css setlocal iskeyword+=-
 au FileType ruby setlocal iskeyword+=_
 au BufEnter *.js syn match ErrorMsg /console.log/
-au FileType coffee syn match ErrorMsg /console.log/
 au FileType ruby syn match ErrorMsg /puts/
-au Filetype eruby.yaml,yaml,yml setlocal commentstring=#\ %s
+au Filetype yaml,yml setlocal commentstring=#\ %s
 
-au FileType javascript nnoremap <buffer> <leader>L iconsole.log()<Esc>
-au FileType javascript inoremap <buffer> <leader>L console.log()<Left>
+au FileType javascript nnoremap <buffer> <leader>L iconsole.log(` ${}`)<Esc>
+au FileType javascript inoremap <buffer> <leader>L console.log(` ${}`)<Left><Left><Left><Left><Left><Left>
 au FileType ruby nnoremap <buffer> <leader>L iRails.logger.info("[aws]" )<Esc>
 au FileType ruby inoremap <buffer> <leader>L Rails.logger.info("[aws] ")<Left><Left>
 
+" Split a chain of method calls into one per line.
+" (Maybe could extend the SplitJoin plugin to handle this.)
+" https://vi.stackexchange.com/a/7819/1643
+command! SplitDot let _s=@/ <Bar> s/\v\.\w+%(\([^)]+\)|\{[^}]+})*/\r\0/g <Bar> let @/=_s <Bar> keepjumps normal! ``=']']
+nnoremap <Leader>sd :SplitDot<CR>
+
+" Split a line of arguments into one per line.
+" (Maybe could extend the SplitJoin plugin to handle this.)
+command! SplitArgs let _s=@/ <Bar> s/\v, (\w+%(\([^)]+\)|\{[^}]+})*)/,\r\1/g <Bar> let @/=_s <Bar> keepjumps normal! ``=']']
+nnoremap <Leader>sa :SplitArgs<CR>
 
 "
 " Colours
@@ -406,7 +409,7 @@ iab mnh model_name.human
 
 
 " syntax checker
-nnoremap <Leader>s :w \| !sinter %<CR>
+nnoremap <Leader>z :w \| !sinter %<CR>
 
 
 "
@@ -548,17 +551,19 @@ let g:projectionist_heuristics = {
   \       "template": ["class {camelcase|capitalize}", "end"],
   \       "type": "presenter"
   \     },
-  \     "app/frontend/styles/*.sass": {
+  \     "app/assets/stylesheets/*.sass": {
   \       "type": "sass"
   \     },
-  \     "app/frontend/javascripts/controllers/*_controller.js": {
+  \     "app/javascript/controllers/*_controller.js": {
   \       "type": "stimulus",
   \       "template": [
-  \         "import {open} Controller {close} from 'stimulus'",
+  \         "import {open} Controller {close} from '@hotwired/stimulus'",
   \         "",
   \         "export default class extends Controller {",
   \         "",
   \         "  static targets = []",
+  \         "  static values  = {open}{close}",
+  \         "  static classes = []",
   \         "",
   \         "}"]
   \     },
@@ -592,6 +597,13 @@ augroup my_dirvish_events
 
   autocmd FileType dirvish nnoremap <buffer> + :edit %
 augroup END
+
+
+" vim-highline
+nmap <Leader>q <Plug>(HighlineToggle)
+xmap <Leader>q <Plug>(HighlineToggle)
+nmap <Leader>c <Plug>(HighlineClear)
+highlight Highline guibg=#444444
 
 
 " vim-illuminate
@@ -646,8 +658,48 @@ nmap <silent> <Leader>tt :wa\|:TestNearest<CR>
 nmap <silent> <Leader>tf :wa\|:TestFile<CR>
 let test#strategy = 'iterm'  " basic | vimterminal
 let g:test#preserve_screen = 1
+let g:test#echo_command = 0
 
-let g:kite_supported_languages = ['python','javascript','go', 'css', 'html', 'ruby']
-let g:kite_auto_complete = 0
+" vim-foldtext
+let g:FoldText_placeholder = '…'
+let g:FoldText_line = ''
 
+" vim-marked
+let g:marked_filetypes = ["markdown", "mkd", "mdown", "md"]
+
+
+function! Gem()
+  let name = matchstr(getline('.'), '[''"]\zs[^''"]\+\ze[''"]')
+  call Browse('https://rubygems.org/gems/'.name)
+  echom name.':' bundler#project().versions()[name]
+endfunction
+command! Gem call Gem()
+
+
+function! ErbToSlim()
+  " Delete lines containing only <% end %>
+  %g/\v^\s*\<\% end \%\>$/d
+  " Delete lines containing only </some-tag>
+  %g/\v^\s*\<\/\a\w*(\-\a\w*)?\>$/d
+  " Remove closing tag at end of line: </div>$
+  %s/\v\s*\<\/\a\w*(\-\a\w*)?\>$//e
+  " Replace opening tag at start of line: ^<div> -> ^div
+  %s/\v^(\s*)\<(\a\w*%(\-\a\w*)?)\>(\_.)/\=submatch(1).submatch(2).(submatch(3)=~'\<'?' '.submatch(3):"\n")/
+  " Remove %> at end of line
+  %s/\v\s?\%\>$//e
+  " Replace <%= at start of line with =: ^<%= -> =
+  %s/\v^(\s*)\<\%\=/\1=/e
+  " Replace <%# at start of line with /
+  %s/\v^(\s*)\<\%#/\1\//e
+  " Replace <% at start of line with -: ^<% -> -
+  %s/\v^(\s*)\<\%/\1-/e
+
+  " TODO Replace <%= ... %> within line with #{...}
+
+  if expand('%:e') == 'erb'
+    execute 'saveas' expand('%:r').'.slim'
+  endif
+
+  set filetype=slim
+endfunction
 
