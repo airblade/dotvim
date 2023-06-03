@@ -30,6 +30,7 @@ set signcolumn=yes
 
 set splitbelow
 set splitright
+set splitkeep=screen
 
 set ignorecase
 set smartcase
@@ -303,10 +304,6 @@ xnoremap <silent> # yq?p<CR>
 
 " Backspace closes buffer.
 nnoremap <BS> :Bclose<CR>
-
-" Prevent Vim from scrolling original window when splitting horizontally.
-" See example 'Restoring the View' in Vim manual chapter 41.10.
-nnoremap <C-W>s Hmx``:split<CR>`xzt``
 
 " Save all buffers when focus lost, ignoring warnings,
 " and return to normal mode.
