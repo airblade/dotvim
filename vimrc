@@ -190,9 +190,9 @@ autocmd InsertLeave * set list
 
 function! ToggleLeadMultiSpace(...)
   if a:0 ? a:1 : &listchars !~ 'leadmultispace'
-    setlocal listchars+=leadmultispace:\ \ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮
+    setlocal listchars+=leadmultispace:\ \ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮
   else
-    setlocal listchars-=leadmultispace:\ \ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮\ \⋮
+    setlocal listchars-=leadmultispace:\ \ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮
   endif
 endfunction
 nmap <silent> <leader>ti :call ToggleLeadMultiSpace()<CR>
