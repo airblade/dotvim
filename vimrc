@@ -182,11 +182,11 @@ nnoremap <expr> K getline('.')[col('.') - 1] == ' ' ? "r<CR>" : "i<CR><ESC>l"
 " Show tabs and trailing whitespace visually.
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-  set listchars=tab:⇥\ ,trail:…,extends:⇉,precedes:⇇,nbsp:␣
+  set listchars=tab:⇥\ ,extends:⇉,precedes:⇇,nbsp:␣
 endif
 set list
-autocmd InsertEnter * set nolist
-autocmd InsertLeave * set list
+autocmd InsertEnter * setlocal listchars-=trail:…
+autocmd InsertLeave * setlocal listchars+=trail:…
 
 let g:leadmultispace = '  ⋮ · ⋮ · ⋮ · ⋮ · ⋮ · ⋮ · ⋮ · ⋮'
 autocmd FileType ruby,html,slim,sass,yml,yaml,eruby.yaml call interdental#toggle(1)
