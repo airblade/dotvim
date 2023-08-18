@@ -35,6 +35,7 @@ ap/vim-css-color
 jeetsukumaran/vim-indentwise
 tommcdo/vim-lion
 jrudess/vim-foldtext
+~/code/src/vim-interdental
 
 # Filetypes
 tpope/vim-bundler

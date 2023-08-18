@@ -188,15 +188,9 @@ set list
 autocmd InsertEnter * set nolist
 autocmd InsertLeave * set list
 
-function! ToggleLeadMultiSpace(...)
-  if a:0 ? a:1 : &listchars !~ 'leadmultispace'
-    setlocal listchars+=leadmultispace:\ \ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮
-  else
-    setlocal listchars-=leadmultispace:\ \ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮\ \·\ \⋮
-  endif
-endfunction
-nmap <silent> <leader>ti :call ToggleLeadMultiSpace()<CR>
-autocmd BufEnter * call ToggleLeadMultiSpace(index(['slim','sass','yml','yaml','eruby.yaml'], &ft) >= 0)
+let g:leadmultispace = '  ⋮ · ⋮ · ⋮ · ⋮ · ⋮ · ⋮ · ⋮ · ⋮'
+autocmd FileType ruby,html,slim,sass,yml,yaml,eruby.yaml call interdental#toggle(1)
+nmap <leader>ti <Plug>(InterdentalToggle)
 
 
 " Highlight non-ASCII characters.
